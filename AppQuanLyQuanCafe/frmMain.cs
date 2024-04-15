@@ -18,7 +18,7 @@ namespace AppQuanLyQuanCafe
             InitializeComponent();
             DateTime currentTime = DateTime.Now;
             timer = new Timer();
-            timer.Interval = 1000;
+            timer.Interval = 900;
 
             // Gắn sự kiện Tick của Timer với phương thức xử lý sự kiện Timer_Tick
             timer.Tick += Timer_Tick;
