@@ -18,7 +18,7 @@ namespace AppQuanLyQuanCafe
             InitializeComponent();
             DateTime currentTime = DateTime.Now;
             timer = new Timer();
-            timer.Interval = 999;
+            timer.Interval = 1000;
 
             // Gắn sự kiện Tick của Timer với phương thức xử lý sự kiện Timer_Tick
             timer.Tick += Timer_Tick;
@@ -116,6 +116,11 @@ namespace AppQuanLyQuanCafe
         }
 
         private void lblPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLeft_Paint(object sender, PaintEventArgs e)
         {
 
         }
