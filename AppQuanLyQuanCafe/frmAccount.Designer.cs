@@ -47,9 +47,10 @@
             // 
             this.lblText.AutoSize = true;
             this.lblText.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(709, 46);
+            this.lblText.Location = new System.Drawing.Point(532, 37);
+            this.lblText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(300, 33);
+            this.lblText.Size = new System.Drawing.Size(243, 27);
             this.lblText.TabIndex = 0;
             this.lblText.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
@@ -57,9 +58,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(674, 111);
+            this.label1.Location = new System.Drawing.Point(506, 90);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 28);
+            this.label1.Size = new System.Drawing.Size(279, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Loại tài khoản = 1: Quyền quản trị viên";
             // 
@@ -67,9 +69,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(674, 270);
+            this.label2.Location = new System.Drawing.Point(506, 219);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 28);
+            this.label2.Size = new System.Drawing.Size(89, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên hiển thị";
             // 
@@ -77,9 +80,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(674, 158);
+            this.label3.Location = new System.Drawing.Point(506, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(319, 28);
+            this.label3.Size = new System.Drawing.Size(256, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Loại tài khoản =0: Quyển nhân viên";
             // 
@@ -87,9 +91,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(674, 210);
+            this.label4.Location = new System.Drawing.Point(506, 171);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 28);
+            this.label4.Size = new System.Drawing.Size(101, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Tên tài khoản";
             // 
@@ -97,28 +102,29 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(674, 321);
+            this.label5.Location = new System.Drawing.Point(506, 261);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 28);
+            this.label5.Size = new System.Drawing.Size(107, 21);
             this.label5.TabIndex = 5;
             this.label5.Text = "Loại tài khoản";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(818, 207);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(614, 168);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 34);
+            this.textBox1.Size = new System.Drawing.Size(106, 29);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(818, 270);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Location = new System.Drawing.Point(614, 219);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 34);
+            this.textBox2.Size = new System.Drawing.Size(106, 29);
             this.textBox2.TabIndex = 7;
             // 
             // button1
@@ -126,10 +132,10 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(211)))));
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(33, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(25, 37);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 55);
+            this.button1.Size = new System.Drawing.Size(86, 45);
             this.button1.TabIndex = 9;
             this.button1.Text = "THÊM";
             this.button1.UseVisualStyleBackColor = false;
@@ -139,10 +145,10 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(6)))), ((int)(((byte)(0)))));
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(174, 46);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(130, 37);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 55);
+            this.button2.Size = new System.Drawing.Size(86, 45);
             this.button2.TabIndex = 10;
             this.button2.Text = "XOÁ";
             this.button2.UseVisualStyleBackColor = false;
@@ -152,10 +158,10 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(132)))), ((int)(((byte)(9)))));
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(315, 46);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Location = new System.Drawing.Point(236, 37);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 55);
+            this.button3.Size = new System.Drawing.Size(86, 45);
             this.button3.TabIndex = 11;
             this.button3.Text = "SỬA ";
             this.button3.UseVisualStyleBackColor = false;
@@ -165,10 +171,10 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(119)))), ((int)(((byte)(1)))));
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(454, 46);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(340, 37);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 55);
+            this.button4.Size = new System.Drawing.Size(86, 45);
             this.button4.TabIndex = 12;
             this.button4.Text = "XEM";
             this.button4.UseVisualStyleBackColor = false;
@@ -180,18 +186,19 @@
             this.comboBox1.Items.AddRange(new object[] {
             "0",
             "1"});
-            this.comboBox1.Location = new System.Drawing.Point(818, 321);
+            this.comboBox1.Location = new System.Drawing.Point(614, 261);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(105, 36);
+            this.comboBox1.Size = new System.Drawing.Size(80, 29);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1159, 584);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(869, 474);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -205,7 +212,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblText);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAccount";
             this.Text = "frmAccount";
             this.ResumeLayout(false);
