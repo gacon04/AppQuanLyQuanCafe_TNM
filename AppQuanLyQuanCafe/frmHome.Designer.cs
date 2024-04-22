@@ -43,19 +43,20 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(218)))));
             this.label1.Font = new System.Drawing.Font("Tahoma", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(129)))), ((int)(((byte)(74)))));
-            this.label1.Location = new System.Drawing.Point(77, 30);
+            this.label1.Location = new System.Drawing.Point(58, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(859, 72);
+            this.label1.Size = new System.Drawing.Size(686, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "- Hai Lần Coffee SUGGEST -";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(633, 197);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(475, 160);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(435, 286);
+            this.pictureBox1.Size = new System.Drawing.Size(326, 232);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -65,9 +66,10 @@
             this.txtTrendy.AutoSize = true;
             this.txtTrendy.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTrendy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTrendy.Location = new System.Drawing.Point(72, 144);
+            this.txtTrendy.Location = new System.Drawing.Point(54, 117);
+            this.txtTrendy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTrendy.Name = "txtTrendy";
-            this.txtTrendy.Size = new System.Drawing.Size(326, 97);
+            this.txtTrendy.Size = new System.Drawing.Size(260, 77);
             this.txtTrendy.TabIndex = 2;
             this.txtTrendy.Text = "Barista";
             // 
@@ -76,18 +78,20 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Tahoma", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(165)))), ((int)(((byte)(52)))));
-            this.lblPrice.Location = new System.Drawing.Point(81, 251);
+            this.lblPrice.Location = new System.Drawing.Point(61, 204);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(183, 48);
+            this.lblPrice.Size = new System.Drawing.Size(147, 39);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "25.000đ";
             // 
             // lblInfo
             // 
             this.lblInfo.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(83, 321);
+            this.lblInfo.Location = new System.Drawing.Point(62, 261);
+            this.lblInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(480, 226);
+            this.lblInfo.Size = new System.Drawing.Size(360, 184);
             this.lblInfo.TabIndex = 4;
             this.lblInfo.Text = "\"Cà phê tạo hình, một bức tranh hương vị đầy mê hoặc, vẽ lên từng giọt ngọt ngào," +
     " mỗi hơi thở là một nét đậm đà, và mỗi ngụm là một cuộc phiêu lưu tinh tế trong " +
@@ -95,16 +99,16 @@
             // 
             // frmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(245)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1159, 584);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(869, 474);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.txtTrendy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmHome";
             this.Text = "frmHome";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

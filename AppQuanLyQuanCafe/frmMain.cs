@@ -16,13 +16,14 @@ namespace AppQuanLyQuanCafe
         public frmMain()
         {
             InitializeComponent();
+           
             DateTime currentTime = DateTime.Now;
             timer = new Timer();
-            timer.Interval = 1100;
+            timer.Interval = 100;
 
             // Gắn sự kiện Tick của Timer với phương thức xử lý sự kiện Timer_Tick
             timer.Tick += Timer_Tick;
-
+            
             // Bắt đầu Timer
             timer.Start();
             OpenChildForm(new frmHome());
@@ -45,7 +46,6 @@ namespace AppQuanLyQuanCafe
         private void btnHome_Click(object sender, EventArgs e)
         {
              OpenChildForm(new frmHome());
-            lblPage.Text= btnHome.Text;
             
         }
         private Form currentFormChild;
@@ -66,36 +66,30 @@ namespace AppQuanLyQuanCafe
         private void btnTableList_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmTableList());
-            lblPage.Text = btnTableList.Text;
         }
         private void btnBill_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmBill());
-            lblPage.Text = btnBill.Text;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmMenu());
-            lblPage.Text=btnMenu.Text;
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmCategory());
-            lblPage.Text=btnCategory.Text;
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmRevuene2());
-            lblPage.Text=btnRevenue.Text;
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmAccount());
-            lblPage.Text=btnAccount.Text;  
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -121,6 +115,11 @@ namespace AppQuanLyQuanCafe
         }
 
         private void panelLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_Top_Paint(object sender, PaintEventArgs e)
         {
 
         }
