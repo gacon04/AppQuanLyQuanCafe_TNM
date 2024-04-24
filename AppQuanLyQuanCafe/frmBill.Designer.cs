@@ -140,7 +140,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button7.Location = new System.Drawing.Point(372, 123);
+            this.button7.Location = new System.Drawing.Point(9, 236);
             this.button7.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(103, 93);
@@ -151,7 +151,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button8.Location = new System.Drawing.Point(9, 236);
+            this.button8.Location = new System.Drawing.Point(130, 236);
             this.button8.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(103, 93);
@@ -162,7 +162,7 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button9.Location = new System.Drawing.Point(130, 236);
+            this.button9.Location = new System.Drawing.Point(251, 236);
             this.button9.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(103, 93);
@@ -173,7 +173,7 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button10.Location = new System.Drawing.Point(251, 236);
+            this.button10.Location = new System.Drawing.Point(9, 349);
             this.button10.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(103, 93);
@@ -198,7 +198,7 @@
             "BÀN 10",
             "BÀN 11"});
             this.comboBox1.Location = new System.Drawing.Point(616, 46);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(194, 25);
             this.comboBox1.TabIndex = 13;
@@ -208,7 +208,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(440, 40);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -220,7 +220,7 @@
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(616, 89);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(167, 25);
             this.comboBox2.TabIndex = 14;
@@ -230,7 +230,7 @@
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(616, 139);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(167, 25);
             this.comboBox3.TabIndex = 15;
@@ -240,7 +240,7 @@
             this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
             this.button12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(870, 110);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(112, 56);
             this.button12.TabIndex = 16;
@@ -251,7 +251,7 @@
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(808, 140);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(45, 26);
             this.numericUpDown1.TabIndex = 17;
@@ -259,9 +259,10 @@
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(158)))), ((int)(((byte)(92)))));
+            this.button13.FlatAppearance.BorderSize = 0;
             this.button13.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button13.Location = new System.Drawing.Point(870, 46);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button13.Margin = new System.Windows.Forms.Padding(2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(112, 43);
             this.button13.TabIndex = 18;
@@ -294,7 +295,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(651, 465);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 25);
             this.textBox1.TabIndex = 21;
@@ -303,7 +304,7 @@
             // 
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(651, 522);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(187, 25);
@@ -315,7 +316,7 @@
             this.button14.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button14.Location = new System.Drawing.Point(870, 491);
-            this.button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button14.Margin = new System.Windows.Forms.Padding(2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(102, 66);
             this.button14.TabIndex = 23;
@@ -333,7 +334,7 @@
             this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(470, 185);
-            this.lsvBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvBill.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBill.MultiSelect = false;
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(480, 263);
@@ -389,16 +390,16 @@
             this.flowLayoutPanel1.Controls.Add(this.button15);
             this.flowLayoutPanel1.Controls.Add(this.button16);
             this.flowLayoutPanel1.Controls.Add(this.button17);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(21, 63);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 89);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(375, 493);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 620);
             this.flowLayoutPanel1.TabIndex = 26;
             // 
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button11.Location = new System.Drawing.Point(372, 236);
+            this.button11.Location = new System.Drawing.Point(130, 349);
             this.button11.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(103, 93);
@@ -409,7 +410,7 @@
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button15.Location = new System.Drawing.Point(9, 349);
+            this.button15.Location = new System.Drawing.Point(251, 349);
             this.button15.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(103, 93);
@@ -420,7 +421,7 @@
             // button16
             // 
             this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button16.Location = new System.Drawing.Point(130, 349);
+            this.button16.Location = new System.Drawing.Point(9, 462);
             this.button16.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(103, 93);
@@ -431,7 +432,7 @@
             // button17
             // 
             this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(233)))), ((int)(((byte)(221)))));
-            this.button17.Location = new System.Drawing.Point(251, 349);
+            this.button17.Location = new System.Drawing.Point(130, 462);
             this.button17.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(103, 93);
@@ -447,7 +448,7 @@
             "%",
             "Đồng"});
             this.comboBox4.Location = new System.Drawing.Point(787, 467);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(67, 27);
             this.comboBox4.TabIndex = 27;
@@ -491,7 +492,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1016, 603);
+            this.ClientSize = new System.Drawing.Size(1405, 887);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -511,11 +512,9 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTableList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1032, 642);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1032, 642);
             this.Name = "frmBill";
             this.Text = "frmBill";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

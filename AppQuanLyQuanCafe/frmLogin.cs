@@ -21,6 +21,7 @@ namespace AppQuanLyQuanCafe
         {
             if (txtUserName.Text == "admin" && txtPass.Text =="1")
             {
+                MessageBox.Show("Bạn sẽ đăng nhập App với vai trò Quản trị viên !");
                 frmMain frmMain = new frmMain();
                 frmMain.Show();
                 this.Hide();
@@ -47,7 +48,7 @@ namespace AppQuanLyQuanCafe
                 {
                     txtPass.UseSystemPasswordChar= true;
                 
-            }
+                 }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

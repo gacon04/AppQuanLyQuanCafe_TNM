@@ -16,5 +16,11 @@ namespace AppQuanLyQuanCafe
         {
             InitializeComponent();
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            lblTieude.Text +="tháng "+(dateTime.Month).ToString()+"/"+ (dateTime.Year).ToString();
+        }
     }
 }

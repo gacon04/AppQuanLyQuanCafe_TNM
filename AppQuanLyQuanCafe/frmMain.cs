@@ -58,7 +58,8 @@ namespace AppQuanLyQuanCafe
         private void btnHome_Click(object sender, EventArgs e)
         {
              OpenChildForm(new frmHome());
-            
+            lblTenmuc.Text = "TRANG CHỦ";
+
         }
         private Form currentFormChild;
         private void OpenChildForm(Form childForm)
