@@ -12,15 +12,23 @@ namespace AppQuanLyQuanCafe
 {
     public partial class frmHome : Form
     {
+      //  private frmMain formMainInstance;
+
         public frmHome()
         {
             InitializeComponent();
+      //      formMainInstance = new frmMain();
         }
 
         private void frmHome_Load(object sender, EventArgs e)
         {
             DateTime dateTime = DateTime.Now;
             lblTieude.Text +="tháng "+(dateTime.Month).ToString()+"/"+ (dateTime.Year).ToString();
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

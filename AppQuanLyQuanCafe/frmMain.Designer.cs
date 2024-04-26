@@ -364,7 +364,6 @@
         private System.Windows.Forms.Label lblHi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.Button btnRevenue;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private System.Windows.Forms.Label lblTenmuc;
@@ -372,6 +371,7 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBody;
+        public System.Windows.Forms.Button btnRevenue;
     }
 }
 

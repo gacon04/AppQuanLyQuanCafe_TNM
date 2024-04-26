@@ -30,6 +30,7 @@ namespace AppQuanLyQuanCafe
             timer.Start();
             lblDate.Text = currentTime.ToString("dd/MM/yyyy"); 
             OpenChildForm(new frmHome());
+           
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace AppQuanLyQuanCafe
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmRevuene2());
+            OpenChildForm(new frmRevuene());
             lblTenmuc.Text = "THỐNG KÊ";
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppQuanLyQuanCafe
 {
-    public partial class frmCategory : Form
+    public partial class frmRevuene : Form
     {
-        public frmCategory()
+        public frmRevuene()
         {
             InitializeComponent();
         }
