@@ -89,88 +89,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="GUI_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="GUI_Login.Designer.cs">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="GUI_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="GUI_Main.Designer.cs">
+      <DependentUpon>GUI_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAccount.cs">
+    <Compile Include="GUI_Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAccount.Designer.cs">
-      <DependentUpon>frmAccount.cs</DependentUpon>
+    <Compile Include="GUI_Account.Designer.cs">
+      <DependentUpon>GUI_Account.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRevuene.cs">
+    <Compile Include="GUI_Revuene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRevuene.Designer.cs">
-      <DependentUpon>frmRevuene.cs</DependentUpon>
+    <Compile Include="GUI_Revuene.Designer.cs">
+      <DependentUpon>GUI_Revuene.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHome.cs">
+    <Compile Include="GUI_Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHome.Designer.cs">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <Compile Include="GUI_Home.Designer.cs">
+      <DependentUpon>GUI_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.cs">
+    <Compile Include="GUI_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.cs">
-      <DependentUpon>frmMenu.cs</DependentUpon>
+    <Compile Include="GUI_Menu.Designer.cs">
+      <DependentUpon>GUI_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategory.cs">
+    <Compile Include="GUI_Category.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategory.Designer.cs">
-      <DependentUpon>frmCategory.cs</DependentUpon>
+    <Compile Include="GUI_Category.Designer.cs">
+      <DependentUpon>GUI_Category.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBill.cs">
+    <Compile Include="GUI_Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBill.Designer.cs">
-      <DependentUpon>frmBill.cs</DependentUpon>
+    <Compile Include="GUI_Bill.Designer.cs">
+      <DependentUpon>GUI_Bill.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTableList.cs">
+    <Compile Include="GUI_TableList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTableList.Designer.cs">
-      <DependentUpon>frmTableList.cs</DependentUpon>
+    <Compile Include="GUI_TableList.Designer.cs">
+      <DependentUpon>GUI_TableList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAccount.resx">
-      <DependentUpon>frmAccount.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Account.resx">
+      <DependentUpon>GUI_Account.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRevuene.resx">
-      <DependentUpon>frmRevuene.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Revuene.resx">
+      <DependentUpon>GUI_Revuene.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHome.resx">
-      <DependentUpon>frmHome.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Home.resx">
+      <DependentUpon>GUI_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Login.resx">
+      <DependentUpon>GUI_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Main.resx">
+      <DependentUpon>GUI_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
-      <DependentUpon>frmMenu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Menu.resx">
+      <DependentUpon>GUI_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategory.resx">
-      <DependentUpon>frmCategory.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Category.resx">
+      <DependentUpon>GUI_Category.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBill.resx">
-      <DependentUpon>frmBill.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Bill.resx">
+      <DependentUpon>GUI_Bill.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTableList.resx">
-      <DependentUpon>frmTableList.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_TableList.resx">
+      <DependentUpon>GUI_TableList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,6 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ce489884c2e38e40c1f3f09fb2f8ed54.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{8d537ee4-e713-45d8-86f8-5528af8e8794}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{d8a84560-593d-4282-8c1c-5e3581c7e4e0}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
