@@ -13,17 +13,17 @@ namespace BUS
     public class BUS_Account
     {
         DAO_Account DAOAccount = new DAO_Account();
-        public DataTable getAccountTable()
+        public DataTable getAccountTable(string status)
         {
-            return DAOAccount.getAccountTable();
+            return DAOAccount.getAccountTable(status);
         }
         public bool addAccount(DTO_Account account)
         {
             return DAOAccount.addAccount(account);
         }
-        public bool removeAccount(int account_ID)
+        public bool deleteAccount(int account_ID,string role)
         {
-            return DAOAccount.deleteAccount(account_ID);
+            return DAOAccount.deleteAccount(account_ID,role);
         }
         public bool canGetAccountByID(int account_ID)
         {
@@ -33,5 +33,10 @@ namespace BUS
         {
             return DAOAccount.getAccountByID(account_ID);
         }
+        public bool updateAccount(DTO_Account account)
+        {
+            return DAOAccount.updateAccount(account);
+        }
+       
     }
 }

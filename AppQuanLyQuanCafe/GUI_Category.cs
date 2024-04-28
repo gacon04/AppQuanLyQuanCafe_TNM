@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,24 @@ namespace AppQuanLyQuanCafe
 {
     public partial class frmCategory : Form
     {
-        public frmCategory()
+        BUS_Category bUS_Category = new BUS_Category();
+        public frmCategory(string role)
         {
             InitializeComponent();
+            if (role=="Member")
+            {
+                btnAdd.Visible = false;
+                btnDelete.Visible = false;
+                btnUpdate.Visible = false;
+            }    
+        }
+
+        private void frmCategory_Load(object sender, EventArgs e)
+        {
+            dgvCategory.DataSource = bUS_Category.getCategoryTable();
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
         }
     }
 }

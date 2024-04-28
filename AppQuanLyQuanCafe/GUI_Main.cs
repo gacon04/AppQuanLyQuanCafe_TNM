@@ -14,12 +14,18 @@ namespace AppQuanLyQuanCafe
 {
     public partial class frmMain : Form
     {
+        string thisRole = "";
         Timer timer;
-        public frmMain()
+        public frmMain(string role)
         {
             InitializeComponent();
            
             DateTime currentTime = DateTime.Now;
+            thisRole = role;
+            if (role == "Member")
+            {
+                btnAccount.Visible = false;
+            }
             timer = new Timer();
             timer.Interval = 100;
 
@@ -30,7 +36,7 @@ namespace AppQuanLyQuanCafe
             timer.Start();
             lblDate.Text = currentTime.ToString("dd/MM/yyyy"); 
             OpenChildForm(new frmHome());
-           
+            
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -98,7 +104,7 @@ namespace AppQuanLyQuanCafe
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmCategory());
+            OpenChildForm(new frmCategory(thisRole));
             lblTenmuc.Text = "DANH MỤC";
 
         }
@@ -119,9 +125,14 @@ namespace AppQuanLyQuanCafe
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            frmLogin frm = new frmLogin();
-            frm.Show();
-            this.Hide();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn thoát phiên đăng nhập này", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                frmLogin frm = new frmLogin();
+                frm.Show();
+                this.Hide();
+            }    
+            
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

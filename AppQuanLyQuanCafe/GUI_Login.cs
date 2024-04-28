@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BUS;
+using DTO;
 namespace AppQuanLyQuanCafe
 {
     public partial class frmLogin : Form
     {
+        BUS_Login BUS_Login = new BUS_Login();
         public frmLogin()
         {
             InitializeComponent();
@@ -19,16 +21,26 @@ namespace AppQuanLyQuanCafe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "admin" && txtPass.Text =="1")
+            if (BUS_Login.haveRole(txtUserName.Text,txtPass.Text))
             {
-                MessageBox.Show("Bạn sẽ đăng nhập App với vai trò Quản trị viên !");
-                frmMain frmMain = new frmMain();
-                frmMain.Show();
-                this.Hide();
+                if (BUS_Login.isAdmin(txtUserName.Text,txtPass.Text))
+                {
+                    MessageBox.Show("Bạn sẽ đăng nhập với vai trò Quản trị viên");
+                    frmMain frmMain = new frmMain("Admin");
+                    this.Hide();
+                    frmMain.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Bạn sẽ đăng nhập với vai trò Nhân viên, làm việc tốt nhé !");
+                    frmMain frmMain = new frmMain("Member");
+                    this.Hide();
+                    frmMain.ShowDialog();
+                }
             }
             else
             {
-                MessageBox.Show("Thông tin đăng nhập không hợp lệ","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Đăng nhập không thành công, kiểm tra lại thông tin và trạng thái tài khoản","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }    
         }
 
@@ -39,22 +51,11 @@ namespace AppQuanLyQuanCafe
 
         private void checkBox1_CheckStateChanged(object sender, EventArgs e)
         {
+
             
-                if (checkBox1.Checked)
-                {
-                txtPass.UseSystemPasswordChar = false;
-                }
-                else
-                {
-                    txtPass.UseSystemPasswordChar= true;
-                
-                 }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -80,6 +81,16 @@ namespace AppQuanLyQuanCafe
         private void label3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Vui lòng liên hệ với Quản trị viên để cấp lại mật khẩu ");
+        }
+
+        private void txtAccount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPass.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
     }
 }

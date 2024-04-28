@@ -15,7 +15,8 @@ namespace AppQuanLyQuanCafe
     public partial class frmAccount : Form
     {
         BUS_Account busAcc = new BUS_Account();
-        private int accountIDNow=0;
+        private int accountIDNow=-1;
+        private string statusFillterNow = "Full";
         public frmAccount()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace AppQuanLyQuanCafe
 
         private void frmAccount_Load(object sender, EventArgs e)
         {
-            dgvAccount.DataSource = busAcc.getAccountTable();
+            dgvAccount.DataSource = busAcc.getAccountTable(statusFillterNow);
             btnAdd.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;  
@@ -40,7 +41,7 @@ namespace AppQuanLyQuanCafe
 
         }
 
-        public bool checkInfoBeforeAdd()
+        public bool checkValidInfo()
         {
             if (txtName.Text=="") return false;
             if (txtCCCDNum.Text.Length < 12 || txtCCCDNum.Text.Any(char.IsLetter))
@@ -70,7 +71,7 @@ namespace AppQuanLyQuanCafe
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (checkInfoBeforeAdd())
+            if (checkValidInfo())
             {
                 string sex = "Nam";
                 if (rdnFemale.Checked)
@@ -91,7 +92,7 @@ namespace AppQuanLyQuanCafe
                 if (busAcc.addAccount(account))
                 {
                     MessageBox.Show("Thêm mới tài khoản thành công");
-                    dgvAccount.DataSource = busAcc.getAccountTable();
+                    dgvAccount.DataSource = busAcc.getAccountTable(statusFillterNow);
                     clearInfoGroupBoxAccount();
                 }
                 else
@@ -101,7 +102,7 @@ namespace AppQuanLyQuanCafe
             }
             else
             {
-                MessageBox.Show("Vui long nhap day du va hop le moi thong tin");
+                MessageBox.Show("Vui lòng nhập đầy đủ / hợp lệ mọi thông tin !");
             }    
         }
 
@@ -173,6 +174,87 @@ namespace AppQuanLyQuanCafe
                 btnUpdate.Enabled = false;
             }
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvAccount.SelectedRows.Count > 0)
+            {
+                string thisRole = "Admin";
+                if (cbxRole.SelectedIndex == 1)
+                {
+                    thisRole = "Member";
+                }    
+                if (busAcc.deleteAccount(accountIDNow,thisRole))
+                {
+                    MessageBox.Show("Xóa tài khoản thành công");
+
+                    dgvAccount.DataSource = busAcc.getAccountTable(statusFillterNow);// refresh datagridview
+                    clearInfoGroupBoxAccount();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công, tài khoản không thể xoá");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn tài khoản muốn xoá");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (checkValidInfo())
+            {
+                string sex = "Nam";
+                if (rdnFemale.Checked)
+                {
+                    sex = "Nữ";
+                }
+                string role = "Admin";
+                if (cbxRole.SelectedIndex == 1)
+                {
+                    role = "Member";
+                }
+                string activeStatus = "Nghỉ";
+                if (chkActive.Checked)
+                {
+                    activeStatus = "Hoạt động";
+                }
+                DTO_Account account = new DTO_Account(accountIDNow, txtName.Text, txtCCCDNum.Text, txtPhoneNumber.Text, sex, txtAddress.Text, role, txtAccount.Text, txtPassword.Text, activeStatus);
+                if (busAcc.updateAccount(account))
+                {
+                    MessageBox.Show("Cập nhật tài khoản thành công");
+                    dgvAccount.DataSource = busAcc.getAccountTable(statusFillterNow);
+                    clearInfoGroupBoxAccount();
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra, cập nhật không thành công");
+                }
+            }   
+            else
+            {
+                MessageBox.Show("Thông tin không hợp lệ / đầy đủ, không thể cập nhật");
+            }
+        }
+
+        private void cbxAccountStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxAccountStatus.SelectedIndex == 0)
+            {
+                statusFillterNow = "Full";
+            }
+            else if (cbxAccountStatus.SelectedIndex == 1)
+            {
+                statusFillterNow = "Active";
+            }
+            else if (cbxAccountStatus.SelectedIndex == 2)
+            {
+                statusFillterNow = "Off";
+            }
+            dgvAccount.DataSource = busAcc.getAccountTable(statusFillterNow);
         }
     }
 }
