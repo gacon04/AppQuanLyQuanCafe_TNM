@@ -47,6 +47,7 @@
             this.panelLeft = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBody = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelLeft.SuspendLayout();
@@ -60,13 +61,13 @@
             this.btnTableList.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTableList.Image = ((System.Drawing.Image)(resources.GetObject("btnTableList.Image")));
             this.btnTableList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTableList.Location = new System.Drawing.Point(4, 316);
+            this.btnTableList.Location = new System.Drawing.Point(4, 393);
             this.btnTableList.Margin = new System.Windows.Forms.Padding(2);
             this.btnTableList.Name = "btnTableList";
             this.btnTableList.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnTableList.Size = new System.Drawing.Size(323, 72);
+            this.btnTableList.Size = new System.Drawing.Size(325, 66);
             this.btnTableList.TabIndex = 3;
-            this.btnTableList.Text = "       Quản lý bàn";
+            this.btnTableList.Text = "     Quản lý bàn";
             this.btnTableList.UseVisualStyleBackColor = true;
             this.btnTableList.Click += new System.EventHandler(this.btnTableList_Click);
             // 
@@ -77,13 +78,13 @@
             this.btnCategory.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategory.Location = new System.Drawing.Point(2, 508);
+            this.btnCategory.Location = new System.Drawing.Point(8, 573);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCategory.Size = new System.Drawing.Size(325, 74);
+            this.btnCategory.Size = new System.Drawing.Size(325, 66);
             this.btnCategory.TabIndex = 5;
-            this.btnCategory.Text = "      Danh mục";
+            this.btnCategory.Text = "  Danh mục";
             this.btnCategory.UseVisualStyleBackColor = true;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
@@ -94,13 +95,13 @@
             this.btnMenu.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(2, 410);
+            this.btnMenu.Location = new System.Drawing.Point(4, 483);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnMenu.Size = new System.Drawing.Size(325, 78);
+            this.btnMenu.Size = new System.Drawing.Size(325, 66);
             this.btnMenu.TabIndex = 4;
-            this.btnMenu.Text = "    Sản phẩm";
+            this.btnMenu.Text = " Thực đơn";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
@@ -111,13 +112,13 @@
             this.btnBill.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.Image = ((System.Drawing.Image)(resources.GetObject("btnBill.Image")));
             this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBill.Location = new System.Drawing.Point(4, 225);
+            this.btnBill.Location = new System.Drawing.Point(6, 213);
             this.btnBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnBill.Name = "btnBill";
             this.btnBill.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnBill.Size = new System.Drawing.Size(321, 70);
+            this.btnBill.Size = new System.Drawing.Size(325, 66);
             this.btnBill.TabIndex = 2;
-            this.btnBill.Text = "Hoá đơn";
+            this.btnBill.Text = "Bán hàng";
             this.btnBill.UseVisualStyleBackColor = true;
             this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
@@ -129,13 +130,13 @@
             this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(1, 136);
+            this.btnHome.Location = new System.Drawing.Point(2, 123);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(325, 71);
+            this.btnHome.Size = new System.Drawing.Size(325, 66);
             this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "    Trang chủ";
+            this.btnHome.Text = "    Tổng quan";
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -146,13 +147,13 @@
             this.btnRevenue.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevenue.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenue.Image")));
             this.btnRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRevenue.Location = new System.Drawing.Point(3, 602);
+            this.btnRevenue.Location = new System.Drawing.Point(6, 663);
             this.btnRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnRevenue.Size = new System.Drawing.Size(323, 85);
+            this.btnRevenue.Size = new System.Drawing.Size(325, 66);
             this.btnRevenue.TabIndex = 6;
-            this.btnRevenue.Text = "   Thống kê";
+            this.btnRevenue.Text = "Thống kê";
             this.btnRevenue.UseVisualStyleBackColor = true;
             this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
@@ -163,20 +164,20 @@
             this.btnAccount.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.Image = ((System.Drawing.Image)(resources.GetObject("btnAccount.Image")));
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(3, 703);
+            this.btnAccount.Location = new System.Drawing.Point(4, 753);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAccount.Size = new System.Drawing.Size(323, 78);
+            this.btnAccount.Size = new System.Drawing.Size(325, 66);
             this.btnAccount.TabIndex = 7;
-            this.btnAccount.Text = "    Tài khoản";
+            this.btnAccount.Text = " Tài khoản";
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 811);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 843);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(316, 45);
@@ -189,7 +190,7 @@
             // 
             this.lblHi.Font = new System.Drawing.Font("Montserrat", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHi.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblHi.Location = new System.Drawing.Point(8, 878);
+            this.lblHi.Location = new System.Drawing.Point(8, 912);
             this.lblHi.Name = "lblHi";
             this.lblHi.Size = new System.Drawing.Size(319, 45);
             this.lblHi.TabIndex = 1;
@@ -200,7 +201,7 @@
             // 
             this.lblDate.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblDate.Location = new System.Drawing.Point(3, 940);
+            this.lblDate.Location = new System.Drawing.Point(2, 962);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(319, 29);
             this.lblDate.TabIndex = 2;
@@ -258,9 +259,9 @@
             this.lblTenmuc.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenmuc.Location = new System.Drawing.Point(591, 16);
             this.lblTenmuc.Name = "lblTenmuc";
-            this.lblTenmuc.Size = new System.Drawing.Size(222, 44);
+            this.lblTenmuc.Size = new System.Drawing.Size(229, 44);
             this.lblTenmuc.TabIndex = 0;
-            this.lblTenmuc.Text = "TRANG CHỦ";
+            this.lblTenmuc.Text = "TỔNG QUAN";
             // 
             // guna2HtmlLabel1
             // 
@@ -276,6 +277,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(234)))), ((int)(((byte)(218)))));
+            this.panelLeft.Controls.Add(this.button1);
             this.panelLeft.Controls.Add(this.guna2HtmlLabel1);
             this.panelLeft.Controls.Add(this.btnHome);
             this.panelLeft.Controls.Add(this.lblDate);
@@ -315,6 +317,22 @@
             this.panelBody.Name = "panelBody";
             this.panelBody.Size = new System.Drawing.Size(1421, 926);
             this.panelBody.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(4, 303);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(325, 66);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Hoá đơn";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -372,6 +390,7 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBody;
         public System.Windows.Forms.Button btnRevenue;
+        private System.Windows.Forms.Button button1;
     }
 }
 

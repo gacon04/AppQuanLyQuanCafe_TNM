@@ -15,5 +15,10 @@ namespace BUS
         {
             return DAOCategory.getCategoryTable();
         }
+        public bool addCategory(DTO_Category category)
+        {
+            return DAOCategory.addCategory(category);
+        }
+       
     }
 }

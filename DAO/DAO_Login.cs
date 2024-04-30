@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class DAO_Login:DBConnect
+    public class DAO_Login:DBConnect //kế thừa conn
     {
         public string roleOfInput(string account, string password)
         {

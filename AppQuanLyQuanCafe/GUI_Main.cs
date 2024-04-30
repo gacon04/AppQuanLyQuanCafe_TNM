@@ -65,7 +65,7 @@ namespace AppQuanLyQuanCafe
         private void btnHome_Click(object sender, EventArgs e)
         {
              OpenChildForm(new frmHome());
-            lblTenmuc.Text = "TRANG CHỦ";
+            lblTenmuc.Text = "TỔNG QUAN";
 
         }
         private Form currentFormChild;
@@ -91,14 +91,14 @@ namespace AppQuanLyQuanCafe
         private void btnBill_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmBill());
-            lblTenmuc.Text = "HOÁ ĐƠN";
+            lblTenmuc.Text = "BÁN HÀNG";
 
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
             OpenChildForm(new frmMenu());
-            lblTenmuc.Text = "MENU";
+            lblTenmuc.Text = "THỰC ĐƠN";
 
         }
 

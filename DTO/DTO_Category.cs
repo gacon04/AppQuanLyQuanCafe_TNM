@@ -27,8 +27,8 @@ namespace DTO
             get { return _CreatedDate; }
             set { _CreatedDate = value; }
         }
-        DTO_Category() { }
-        DTO_Category(int ID, string name, string description, DateTime date)
+        public DTO_Category() { }
+        public DTO_Category(int ID, string name, string description, DateTime date)
         {
             _ID = ID;
             _Name = name;
