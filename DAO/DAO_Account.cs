@@ -157,6 +157,39 @@ namespace DAO
             return account;
 
         }
+        public bool existAccount(int id,string account)
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+
+                string SQL = "SELECT COUNT(*) FROM Account WHERE  Account= @Account AND  ID<>@ID";
+                if (id == -1)
+                //trường hợp id=-1 là thêm mới, chỉ cần kiểm tra coi có tên ấy chưa không
+                // còn nếu cập nhật thì phải ktra những dòng khác id coi có dòng nào trùng account không
+                {
+                    SQL = "SELECT COUNT(*) FROM Account WHERE  Account= @Account";
+                }
+                using (SqlCommand command = new SqlCommand(SQL, conn))
+                {
+                    command.Parameters.AddWithValue("@ID", id);
+                    command.Parameters.AddWithValue("@Account", account);
+                    return (int)command.ExecuteScalar() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+
+
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
         public bool updateAccount(DTO_Account account)
         {
             try

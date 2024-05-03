@@ -17,6 +17,10 @@ namespace BUS
         {
             return DAOAccount.getAccountTable(status);
         }
+        public bool existAccount(int id, string account)
+        {
+            return DAOAccount.existAccount(id,account);
+        }
         public bool addAccount(DTO_Account account)
         {
             return DAOAccount.addAccount(account);

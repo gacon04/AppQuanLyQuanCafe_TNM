@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppQuanLyQuanCafe
 {
-    public partial class frmBill : Form
+    public partial class frmOrder : Form
     {
-        public frmBill()
+        public frmOrder()
         {
             InitializeComponent();
         }

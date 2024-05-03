@@ -19,6 +19,14 @@ namespace BUS
         {
             return DAOCategory.addCategory(category);
         }
-       
+        public bool deleteCategory(int cateID)
+        {
+            return DAOCategory.deleteCategory(cateID);
+        }
+        public bool existCategoryName(int id, string cateName)
+        {
+            return DAOCategory.existCategory(id,cateName);
+        }
+
     }
 }

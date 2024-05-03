@@ -1,6 +1,6 @@
 ﻿namespace AppQuanLyQuanCafe
 {
-    partial class frmBill
+    partial class frmOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -235,7 +235,7 @@
             this.button17.Text = "Bàn 10";
             this.button17.UseVisualStyleBackColor = false;
             // 
-            // frmBill
+            // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -247,7 +247,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmBill";
+            this.Name = "frmOrder";
             this.Text = "frmBill";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

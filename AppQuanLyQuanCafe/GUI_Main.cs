@@ -85,12 +85,12 @@ namespace AppQuanLyQuanCafe
         }
         private void btnTableList_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmTableList());
+            OpenChildForm(new frmTableList(thisRole));
             lblTenmuc.Text = "DANH SÁCH BÀN";
         }
         private void btnBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmBill());
+            OpenChildForm(new frmOrder());
             lblTenmuc.Text = "BÁN HÀNG";
 
         }
@@ -185,6 +185,11 @@ namespace AppQuanLyQuanCafe
         }
 
         private void panelBody_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

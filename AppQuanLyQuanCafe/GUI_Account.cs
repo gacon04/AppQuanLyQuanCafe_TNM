@@ -22,11 +22,6 @@ namespace AppQuanLyQuanCafe
             InitializeComponent();
         }
 
-       
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void frmAccount_Load(object sender, EventArgs e)
         {
@@ -73,6 +68,11 @@ namespace AppQuanLyQuanCafe
         {
             if (checkValidInfo())
             {
+                if (busAcc.existAccount(-1,txtAccount.Text))
+                {
+                    MessageBox.Show("Tài khoản đăng nhập như trên đã tồn tại trong hệ thống, không thể thêm mới tài khoản");
+                    return;
+                }    
                 string sex = "Nam";
                 if (rdnFemale.Checked)
                 {
@@ -207,6 +207,12 @@ namespace AppQuanLyQuanCafe
         {
             if (checkValidInfo())
             {
+                int IDAccountNow = int.Parse(dgvAccount.CurrentRow.Cells[0].Value.ToString());
+                if (busAcc.existAccount(IDAccountNow,txtAccount.Text))
+                {
+                    MessageBox.Show("Tài khoản đăng nhập như trên đã tồn tại, không thể cập nhật");
+                    return;
+                }    
                 string sex = "Nam";
                 if (rdnFemale.Checked)
                 {

@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO_Food.cs" />
     <Compile Include="DAO_Account.cs" />
     <Compile Include="DAO_Category.cs" />
     <Compile Include="DAO_Home.cs" />
     <Compile Include="DAO_Login.cs" />
+    <Compile Include="DAO_TableList.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="DTO_Account.cs" />
     <Compile Include="DTO_Category.cs" />
+    <Compile Include="DTO_Food.cs" />
+    <Compile Include="DTO_Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

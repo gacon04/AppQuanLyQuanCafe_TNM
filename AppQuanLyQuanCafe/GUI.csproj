@@ -131,11 +131,11 @@
     <Compile Include="GUI_Category.Designer.cs">
       <DependentUpon>GUI_Category.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_Bill.cs">
+    <Compile Include="GUI_Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI_Bill.Designer.cs">
-      <DependentUpon>GUI_Bill.cs</DependentUpon>
+    <Compile Include="GUI_Order.Designer.cs">
+      <DependentUpon>GUI_Order.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_TableList.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="GUI_Category.resx">
       <DependentUpon>GUI_Category.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI_Bill.resx">
-      <DependentUpon>GUI_Bill.cs</DependentUpon>
+    <EmbeddedResource Include="GUI_Order.resx">
+      <DependentUpon>GUI_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_TableList.resx">
       <DependentUpon>GUI_TableList.cs</DependentUpon>

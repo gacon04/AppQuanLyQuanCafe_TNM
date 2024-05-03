@@ -45,6 +45,8 @@
     <Compile Include="BUS_Category.cs" />
     <Compile Include="BUS_Home.cs" />
     <Compile Include="BUS_Login.cs" />
+    <Compile Include="BUS_Food.cs" />
+    <Compile Include="BUS_TableList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

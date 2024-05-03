@@ -51,6 +51,11 @@ namespace AppQuanLyQuanCafe
             txtCreatedDate.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             if (txtName.Text!="" && Regex.IsMatch(txtName.Text, "[a-zA-Z]"))
             {
+                if (bus_Category.existCategoryName(-1,txtName.Text))
+                {
+                    MessageBox.Show("Tên danh mục như trên đã tồn tại, không thể thêm");
+                    return;
+              }    
                 try
                 {
                     DateTime dateTimeValue = DateTime.ParseExact(txtCreatedDate.Text, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
@@ -113,6 +118,20 @@ namespace AppQuanLyQuanCafe
             else
             {
                 clearAllCategoryInfo();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult  dlg = MessageBox.Show("Toàn bộ thức uống/đồ ăn thuộc danh mục này sẽ bị xoá, bạn có chắc chắn không ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dlg == DialogResult.Yes)
+            {
+                if (bus_Category.deleteCategory(int.Parse(txtID.Text)))
+                {
+                    MessageBox.Show("Xoá danh mục thành công");
+                    clearAllCategoryInfo() ;
+                    dgvCategory.DataSource = bus_Category.getCategoryTable();
+                }
             }
         }
     }
