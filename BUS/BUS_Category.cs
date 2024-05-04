@@ -27,6 +27,9 @@ namespace BUS
         {
             return DAOCategory.existCategory(id,cateName);
         }
+        public bool updateCategory(DTO_Category cate) {
+            return DAOCategory.updateCategory(cate);
+        }
 
     }
 }

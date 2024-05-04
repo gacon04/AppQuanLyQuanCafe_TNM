@@ -134,5 +134,41 @@ namespace AppQuanLyQuanCafe
                 }
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text!="" && Regex.IsMatch(txtName.Text, "[a-zA-Z]"))
+            {
+                try
+                {
+                    if (bus_Category.existCategoryName(int.Parse(txtID.Text), txtName.Text))
+                    {
+                        MessageBox.Show("Tên danh mục đã tồn tại trong hệ thống, không thể cập nhật.");
+                        return;
+                    }
+                    DateTime dateTimeValue = DateTime.ParseExact(txtCreatedDate.Text, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                    DTO_Category dto_category = new DTO_Category(int.Parse(txtID.Text), txtName.Text, txtDescription.Text, dateTimeValue);
+                    if (bus_Category.updateCategory(dto_category))
+                    {
+                        MessageBox.Show("Cập nhật danh mục thành công");
+                        dgvCategory.DataSource = bus_Category.getCategoryTable();
+                        clearAllCategoryInfo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra, cập nhật không thành công");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Thông tin không hợp lệ / đầy đủ, không thể cập nhật");
+            }
+        }
     }
 }

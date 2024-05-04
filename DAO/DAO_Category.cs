@@ -143,6 +143,7 @@ namespace DAO
 
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
+
                 }
             }
             catch (Exception ex)
@@ -156,6 +157,7 @@ namespace DAO
             {
                 conn.Close();
             }
+            
         }
     }
 }
