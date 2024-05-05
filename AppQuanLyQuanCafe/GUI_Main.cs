@@ -97,7 +97,7 @@ namespace AppQuanLyQuanCafe
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmMenu());
+            OpenChildForm(new frmMenu(thisRole));
             lblTenmuc.Text = "THỰC ĐƠN";
 
         }

@@ -28,6 +28,7 @@ namespace DTO
         }
         public int ID
         { get { return _id; }
+            set { _id = value; }
         }
         public string Name
         {
@@ -44,7 +45,7 @@ namespace DTO
             get { return _status; }
             set { _status = value; }
         }
-        public int Category
+        public int CategoryID
         {
             get { return _categoryID; }
             set { _categoryID = value; }

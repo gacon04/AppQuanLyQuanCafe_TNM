@@ -15,6 +15,33 @@ namespace BUS
         {
             return DAOFood.getFoodTable();
         }
-
+        public DataTable getCateIdAndCateName()
+        {
+            return DAOFood.getCateIDandCateName();
+        }
+        public bool exitFoodNameInSameCategory(int id,int cateID,string name)
+        {
+            return DAOFood.existFoodNameInSameCategory(id,cateID,name);
+        }
+        public bool addFood(DTO_Food food)
+        {
+            return DAOFood.addFood(food);
+        }
+        public DTO_Food GetFoodByID(int id)
+        {
+            return DAOFood.getFoodByID(id);
+        }
+        public string getCateNameByID(int id)
+        {
+            return DAOFood.getCateNameById(id);
+        }
+        public bool deleteFood(int foodID)
+        {
+            return DAOFood.deleteFood(foodID);
+        }
+        public bool updateFood(DTO_Food food)
+        {
+            return DAOFood.updateFood(food);
+        }
     }
 }

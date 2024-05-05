@@ -28,9 +28,9 @@ namespace DAO
                 {
                     query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Trống'";
                 }
-                else if (status == "Đang sử dụng")
+                else if (status == "Có người")
                 {
-                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Đang sử dụng'";
+                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Có người'";
                 }
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
 
@@ -45,6 +45,7 @@ namespace DAO
 
 
         }
+        
         public bool addTable(DTO_Table table)
         {
             try

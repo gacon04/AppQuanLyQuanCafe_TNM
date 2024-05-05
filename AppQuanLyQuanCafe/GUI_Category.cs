@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -146,7 +147,12 @@ namespace AppQuanLyQuanCafe
                         MessageBox.Show("Tên danh mục đã tồn tại trong hệ thống, không thể cập nhật.");
                         return;
                     }
-                    DateTime dateTimeValue = DateTime.ParseExact(txtCreatedDate.Text, "yyyy-MM-dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                    DateTime dateTimeValue;
+                    if (!DateTime.TryParse(txtCreatedDate.Text, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTimeValue))
+                    {
+                        MessageBox.Show("Định dạng ngày giờ không hợp lệ");
+                        return;
+                    }
                     DTO_Category dto_category = new DTO_Category(int.Parse(txtID.Text), txtName.Text, txtDescription.Text, dateTimeValue);
                     if (bus_Category.updateCategory(dto_category))
                     {
@@ -170,5 +176,7 @@ namespace AppQuanLyQuanCafe
                 MessageBox.Show("Thông tin không hợp lệ / đầy đủ, không thể cập nhật");
             }
         }
+
+      
     }
 }

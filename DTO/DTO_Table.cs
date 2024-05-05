@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,12 @@ namespace DTO
             _id = id;
             _name = name;
             _status = status;
+        }
+        public DTO_Table(DataRow row)
+        {
+            this.ID = (int)row["ID"];
+            this.Name = row["Name"].ToString();
+            this.Status= row["Status"].ToString();
         }
     }
 }
