@@ -243,5 +243,29 @@ namespace DAO
                 conn.Close();
             }
         }
+        public DataTable getFoodIDandFoodName(int cateID)
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+
+                string SQL = string.Format("SELECT ID, Name FROM Food WHERE Status=N'Còn' AND CategoryID={0}", cateID);
+                if (cateID == -1)
+                {
+                    SQL = "SELECT ID, Name FROM Food WHERE Status=N'Còn'";
+                }
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(SQL, conn);
+
+                DataTable dt = new DataTable();
+                sqlDataAdapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally { conn.Close(); }
+        }
     }
 }

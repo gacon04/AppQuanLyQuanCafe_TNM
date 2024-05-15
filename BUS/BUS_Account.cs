@@ -41,6 +41,21 @@ namespace BUS
         {
             return DAOAccount.updateAccount(account);
         }
-       
+        public bool isAdmin(string account, string password)
+        {
+            return DAOAccount.roleOfInput(account, password) == "Admin";
+        }
+        public bool isMember(string account, string password)
+        {
+            return DAOAccount.roleOfInput(account, password) == "Member";
+        }
+        public bool haveRole(string account, string password)
+        {
+            return DAOAccount.roleOfInput(account, password) != "";
+        }
+        public int getAccountIDByUserName(string userName)
+        {
+            return DAOAccount.getAccountID(userName);
+        }
     }
 }

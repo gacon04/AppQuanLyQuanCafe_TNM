@@ -168,5 +168,57 @@ namespace DAO
                 conn.Close();
             }
         }
+        public List<DTO_Table> LoadTableList()
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                List<DTO_Table> tablelist = new List<DTO_Table>();
+                DataTable dt = new DataTable();
+                using (SqlCommand command = new SqlCommand("SP_GetTableList", conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(command))
+                    {
+                        dataAdapter.Fill(dt);
+                    }
+                }
+                foreach (DataRow row in dt.Rows)
+                {
+                    DTO_Table table = new DTO_Table(row); // đã có hàm chuyển đổi 1 datarow thành 1 DTO_Table trong DTO_Table
+                    tablelist.Add(table);
+                }
+                return tablelist;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public DataTable getTableList()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+
+                string SQL = "SELECT ID, Name FROM TableList";
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(SQL, conn);
+
+                DataTable dt = new DataTable();
+                sqlDataAdapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally { conn.Close(); }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace AppQuanLyQuanCafe
 {
     public partial class frmLogin : Form
     {
-        BUS_Login BUS_Login = new BUS_Login();
+        BUS_Account bus_Account = new BUS_Account();
         public frmLogin()
         {
             InitializeComponent();
@@ -21,19 +21,21 @@ namespace AppQuanLyQuanCafe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (BUS_Login.haveRole(txtUserName.Text,txtPass.Text))
+            if (bus_Account.haveRole(txtUserName.Text,txtPass.Text))
             {
-                if (BUS_Login.isAdmin(txtUserName.Text,txtPass.Text))
+                int accID = bus_Account.getAccountIDByUserName(txtUserName.Text);
+                if (bus_Account.isAdmin(txtUserName.Text,txtPass.Text))
                 {
+                   
                     MessageBox.Show("Bạn sẽ đăng nhập với vai trò Quản trị viên");
-                    frmMain frmMain = new frmMain("Admin");
+                    frmMain frmMain = new frmMain("Admin", accID);
                     this.Hide();
                     frmMain.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Bạn sẽ đăng nhập với vai trò Nhân viên, làm việc tốt nhé !");
-                    frmMain frmMain = new frmMain("Member");
+                    MessageBox.Show("Chúc bạn có một ngày làm việc vui vẻ, hãy luôn tươi cười với khách hàng!");
+                    frmMain frmMain = new frmMain("Member",accID);
                     this.Hide();
                     frmMain.ShowDialog();
                 }

@@ -43,5 +43,9 @@ namespace BUS
         {
             return DAOFood.updateFood(food);
         }
+        public DataTable getFoodIDandFoodName(int cateID)
+        {
+            return DAOFood.getFoodIDandFoodName(cateID);
+        }
     }
 }

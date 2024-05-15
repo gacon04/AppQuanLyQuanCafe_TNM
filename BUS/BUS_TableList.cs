@@ -32,5 +32,13 @@ namespace BUS
         {
             return DAO_TableList.existTableName(id,tableName);
         }
+        public List<DTO_Table> LoadTableList()
+        {
+            return DAO_TableList.LoadTableList();
+        }
+        public DataTable getTableList()
+        {
+            return DAO_TableList.getTableList();
+        }
     }
 }

@@ -16,7 +16,8 @@ namespace AppQuanLyQuanCafe
     {
         string thisRole = "";
         Timer timer;
-        public frmMain(string role)
+        int accountID = -1;
+        public frmMain(string role,int accID)
         {
             InitializeComponent();
            
@@ -25,6 +26,7 @@ namespace AppQuanLyQuanCafe
             if (role == "Member")
             {
                 btnAccount.Visible = false;
+                btnRevenue.Visible = false; 
             }
             timer = new Timer();
             timer.Interval = 100;
@@ -36,7 +38,7 @@ namespace AppQuanLyQuanCafe
             timer.Start();
             lblDate.Text = currentTime.ToString("dd/MM/yyyy"); 
             OpenChildForm(new frmHome());
-            
+            accountID = accID;
 
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -90,7 +92,7 @@ namespace AppQuanLyQuanCafe
         }
         private void btnBill_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmOrder());
+            OpenChildForm(new frmOrder(accountID));
             lblTenmuc.Text = "BÁN HÀNG";
 
         }
@@ -191,7 +193,8 @@ namespace AppQuanLyQuanCafe
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmBill());
+            lblTenmuc.Text = "HOÁ ĐƠN";
         }
     }
 }

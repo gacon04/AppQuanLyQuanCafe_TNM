@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="DTO_Account.cs" />
     <Compile Include="DTO_Bill.cs" />
+    <Compile Include="DTO_BillInfo.cs" />
     <Compile Include="DTO_Category.cs" />
     <Compile Include="DTO_Food.cs" />
+    <Compile Include="DTO_BillInfoDetail.cs" />
     <Compile Include="DTO_Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

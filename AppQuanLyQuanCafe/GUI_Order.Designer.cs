@@ -47,13 +47,16 @@
             this.cbxFoodSelect = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.nudNum = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.STT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nudFoodCount = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lsvBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,9 +99,11 @@
             this.lblSum.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSum.Location = new System.Drawing.Point(113, 101);
             this.lblSum.Name = "lblSum";
-            this.lblSum.Size = new System.Drawing.Size(58, 37);
+            this.lblSum.Size = new System.Drawing.Size(35, 37);
             this.lblSum.TabIndex = 40;
-            this.lblSum.Text = "0Đ";
+            this.lblSum.Text = "0";
+            this.lblSum.TextChanged += new System.EventHandler(this.lblSum_TextChanged);
+            this.lblSum.Click += new System.EventHandler(this.lblSum_Click);
             // 
             // btnPrint
             // 
@@ -115,6 +120,7 @@
             this.btnPrint.Size = new System.Drawing.Size(214, 63);
             this.btnPrint.TabIndex = 39;
             this.btnPrint.Text = "XUẤT HOÁ ĐƠN ";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnPay
             // 
@@ -132,6 +138,7 @@
             this.btnPay.Size = new System.Drawing.Size(214, 63);
             this.btnPay.TabIndex = 38;
             this.btnPay.Text = "THANH TOÁN";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // label2
             // 
@@ -174,6 +181,7 @@
             this.txtDiscount.SelectedText = "";
             this.txtDiscount.Size = new System.Drawing.Size(177, 53);
             this.txtDiscount.TabIndex = 30;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // cbxTableSwap
             // 
@@ -240,7 +248,7 @@
             this.cbxCateSelect.ItemHeight = 30;
             this.cbxCateSelect.Location = new System.Drawing.Point(185, 22);
             this.cbxCateSelect.Name = "cbxCateSelect";
-            this.cbxCateSelect.Size = new System.Drawing.Size(299, 36);
+            this.cbxCateSelect.Size = new System.Drawing.Size(376, 36);
             this.cbxCateSelect.TabIndex = 0;
             this.cbxCateSelect.SelectedIndexChanged += new System.EventHandler(this.cbxCateSelect_SelectedIndexChanged);
             // 
@@ -276,7 +284,7 @@
             this.cbxFoodSelect.ItemHeight = 30;
             this.cbxFoodSelect.Location = new System.Drawing.Point(185, 79);
             this.cbxFoodSelect.Name = "cbxFoodSelect";
-            this.cbxFoodSelect.Size = new System.Drawing.Size(301, 36);
+            this.cbxFoodSelect.Size = new System.Drawing.Size(376, 36);
             this.cbxFoodSelect.TabIndex = 36;
             this.cbxFoodSelect.SelectedIndexChanged += new System.EventHandler(this.cbxFoodSelect_SelectedIndexChanged);
             // 
@@ -294,6 +302,7 @@
             this.btnAdd.Size = new System.Drawing.Size(214, 63);
             this.btnAdd.TabIndex = 37;
             this.btnAdd.Text = "Thêm món";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label6
             // 
@@ -305,44 +314,32 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Số lượng";
             // 
-            // nudNum
+            // nudFoodCount
             // 
-            this.nudNum.BackColor = System.Drawing.Color.Transparent;
-            this.nudNum.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.nudNum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nudNum.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold);
-            this.nudNum.Location = new System.Drawing.Point(706, 6);
-            this.nudNum.Minimum = new decimal(new int[] {
+            this.nudFoodCount.BackColor = System.Drawing.Color.Transparent;
+            this.nudFoodCount.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.nudFoodCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nudFoodCount.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold);
+            this.nudFoodCount.Location = new System.Drawing.Point(706, 6);
+            this.nudFoodCount.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
-            this.nudNum.Name = "nudNum";
-            this.nudNum.Size = new System.Drawing.Size(95, 36);
-            this.nudNum.TabIndex = 39;
-            this.nudNum.UpDownButtonFillColor = System.Drawing.Color.White;
-            this.nudNum.Value = new decimal(new int[] {
+            this.nudFoodCount.Name = "nudFoodCount";
+            this.nudFoodCount.Size = new System.Drawing.Size(95, 36);
+            this.nudFoodCount.TabIndex = 39;
+            this.nudFoodCount.UpDownButtonFillColor = System.Drawing.Color.White;
+            this.nudFoodCount.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.STT});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(38, 141);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(763, 396);
-            this.listView1.TabIndex = 40;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.listView1);
-            this.panel1.Controls.Add(this.nudNum);
+            this.panel1.Controls.Add(this.lsvBill);
+            this.panel1.Controls.Add(this.nudFoodCount);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.cbxFoodSelect);
@@ -353,6 +350,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(824, 567);
             this.panel1.TabIndex = 27;
+            // 
+            // lsvBill
+            // 
+            this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lsvBill.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvBill.HideSelection = false;
+            this.lsvBill.Location = new System.Drawing.Point(38, 157);
+            this.lsvBill.Name = "lsvBill";
+            this.lsvBill.Size = new System.Drawing.Size(763, 389);
+            this.lsvBill.TabIndex = 40;
+            this.lsvBill.UseCompatibleStateImageBehavior = false;
+            this.lsvBill.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "TÊN MÓN";
+            this.columnHeader1.Width = 240;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "ĐƠN GIÁ";
+            this.columnHeader2.Width = 180;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "SỐ LƯỢNG";
+            this.columnHeader3.Width = 148;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "THÀNH TIỀN";
+            this.columnHeader4.Width = 191;
             // 
             // frmOrder
             // 
@@ -377,7 +410,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFoodCount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -405,9 +438,12 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbxFoodSelect;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2NumericUpDown nudNum;
-        public System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader STT;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nudFoodCount;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView lsvBill;
+        public System.Windows.Forms.ColumnHeader columnHeader1;
+        public System.Windows.Forms.ColumnHeader columnHeader2;
+        public System.Windows.Forms.ColumnHeader columnHeader3;
+        public System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

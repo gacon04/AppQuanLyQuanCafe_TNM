@@ -190,16 +190,36 @@ namespace DAO
             }
             return false;
         }
+        public int getAccountID(string account)
+        {
+
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = string.Format("SELECT ID FROM Account WHERE Account=@Account");
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@Account", account);
+                    return (int)command.ExecuteScalar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public bool updateAccount(DTO_Account account)
         {
             try
             {
                 
                 if (conn.State == ConnectionState.Closed) conn.Open();
-                // Query string với tham số hóa
                 string SQL = "UPDATE Account SET Name=@Name,CCCD_Num=@CCCD_Num,PhoneNumber=@PhoneNumber,Sex=@Sex,Address=@Address,Role=@Role,Account=@Account,Password=@Password,Status=@Status WHERE ID =@ID";
-
-                // Tạo đối tượng SqlCommand với câu lệnh SQL và kết nối
                 using (SqlCommand command = new SqlCommand(SQL, conn))
                 {
                     command.Parameters.AddWithValue("@ID", account.ID);
@@ -229,6 +249,41 @@ namespace DAO
             {
                 conn.Close();
             }
+        }
+        public string roleOfInput(string account, string password)
+        {
+            string role = "";
+            string status = "";
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "SELECT Role,Status FROM Account WHERE Account=@account AND Password=@password";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@account", account);
+                    command.Parameters.AddWithValue("@password", password);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            role = reader["Role"].ToString();
+                            status = reader["Status"].ToString();
+                        }
+                    }
+                }
+
+                if ((role == "Admin" || role == "Member") && status == "Hoạt động") return role;
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return "";
+
         }
     }
 }

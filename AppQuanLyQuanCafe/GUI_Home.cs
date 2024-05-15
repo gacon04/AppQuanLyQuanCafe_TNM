@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using System.Security.Cryptography;
 namespace AppQuanLyQuanCafe
 {
     public partial class frmHome : Form
@@ -20,7 +21,7 @@ namespace AppQuanLyQuanCafe
             InitializeComponent();
       //      formMainInstance = new frmMain();
         }
-
+        
         private void frmHome_Load(object sender, EventArgs e)
         {
             xuLySoLieuCucBo();
