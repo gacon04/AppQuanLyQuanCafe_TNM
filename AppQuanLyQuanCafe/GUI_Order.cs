@@ -11,6 +11,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -36,6 +37,7 @@ namespace AppQuanLyQuanCafe
         }
         public void LoadTable()
         {
+            flpTableList.Controls.Clear();
             List<DTO_Table> tableList = bus_Table.LoadTableList();
             foreach (DTO_Table table in tableList)
             {
@@ -61,7 +63,7 @@ namespace AppQuanLyQuanCafe
 
             }
         }
-        
+        private decimal sumBill = 0;
         public void ShowBill(int ID)
         {
             lsvBill.Items.Clear();
@@ -79,6 +81,8 @@ namespace AppQuanLyQuanCafe
             }
             CultureInfo culture = new CultureInfo("vi-VN"); //định dạng nhận diện vùng miền
             lblSum.Text = Math.Round(tongTien).ToString("c",culture); //currency
+            LoadTable();
+            sumBill = decimal.Parse(lblSum.Text, NumberStyles.Currency, culture);
             if (lblSum.Text != "0")
             {
                 txtDiscount.Enabled = true;
@@ -87,6 +91,7 @@ namespace AppQuanLyQuanCafe
             {
                 txtDiscount.Enabled = false;
             }
+
         }
         public void btn_Click(object sender, EventArgs e)
         {
@@ -94,16 +99,9 @@ namespace AppQuanLyQuanCafe
             int tableID = ((sender as Guna2Button).Tag as DTO_Table).ID;
             lsvBill.Tag = (sender as Guna2Button).Tag;  //gán tag của listview bằng chính button mà ta bấm vào
             ShowBill(tableID);
-        }
-        private void cbxFoodSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            txtDiscount.Clear();
         }
 
-        private void frmOrder_Leave(object sender, EventArgs e)
-        {
-
-        }
         private void refresh2ComboBox()
         {
             cbxCateSelect.DataSource = bus_Category.getCategoryTable();
@@ -114,9 +112,9 @@ namespace AppQuanLyQuanCafe
             cbxFoodSelect.DisplayMember = "Name";
             cbxFoodSelect.ValueMember = "ID";
             cbxFoodSelect.SelectedIndex = -1;
-            cbxTableSwap.DataSource = bus_Table.getTableList();
-            cbxTableSwap.DisplayMember = "Name";
-            cbxTableSwap.ValueMember = "ID";    
+         /*   cbxTableSwap.DataSource = bus_Table.getTableList();
+            cbxTableSwap.DisplayMember = "Name"; 
+            cbxTableSwap.ValueMember = "ID";    */
         }
         private void frmOrder_Load(object sender, EventArgs e)
         {
@@ -154,11 +152,44 @@ namespace AppQuanLyQuanCafe
 
         }
 
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+        public void calSumBill()
+        {
+            try
+            {
+                
+                CultureInfo culture = new CultureInfo("vi-VN"); //định dạng nhận diện vùng miền
+                if (!string.IsNullOrWhiteSpace(txtDiscount.Text))
+                {
+                    if (decimal.Parse(txtDiscount.Text) > sumBill)
+                    {
+                        txtDiscount.Clear();
+                    }    
+                    lblSum.Text = (Math.Round(sumBill) - Math.Round(decimal.Parse(txtDiscount.Text))).ToString("c", culture); //currency
+
+                }
+                else
+                {
+                    lblSum.Text = Math.Round(sumBill).ToString("c", culture); //currency
+
+                }
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Vui lòng nhập số tiền giảm giá hợp lệ.");
+            }
+        }
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
-           
+            calSumBill();
         }
-
         private void lblSum_Click(object sender, EventArgs e)
         {
 
@@ -192,14 +223,24 @@ namespace AppQuanLyQuanCafe
                 if (!bus_BillInfoDetails.addBillInfo(dTO_BillInfo))
                 {
                     MessageBox.Show("Thêm món vào hoá đơn không thành công");
+                    return;
                 }
+                LoadTable();
+                ShowBill(table.ID);
+                calSumBill();
             }    
             else
             {
                 DTO_BillInfo dTO_BillInfo = new DTO_BillInfo(0,idBill,idFoodSelected, (int)nudFoodCount.Value);
-                bus_BillInfoDetails.addBillInfo(dTO_BillInfo);
+                if (!bus_BillInfoDetails.addBillInfo(dTO_BillInfo)){
+
+                    MessageBox.Show("Thêm vào hoá đơn không thành công");
+                    return;
+                }
+                ShowBill(table.ID);
+                calSumBill();
             }
-            ShowBill(table.ID);
+            
         }
 
         private bool isAnyButtonClicked = false;
@@ -223,10 +264,21 @@ namespace AppQuanLyQuanCafe
                 DialogResult dlg = MessageBox.Show(mess, "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dlg == DialogResult.Yes)
                 {
-                    if (bus_Bill.CheckOutBill(idBill,DateTime.Now))
+                    CultureInfo culture = new CultureInfo("vi-VN");
+                    decimal sumBillNow = decimal.Parse(lblSum.Text, NumberStyles.Currency, culture);
+                    decimal discount;
+                    if (!string.IsNullOrWhiteSpace(txtDiscount.Text))
+                    {
+                        discount = decimal.Parse(txtDiscount.Text);
+                    }
+                    else discount = 0;
+                      
+                    if (bus_Bill.CheckOutBill(idBill, sumBillNow, discount))
                     {
                         MessageBox.Show("Thanh toán thành công");
                         ShowBill(tableNow.ID);
+                        txtDiscount.Clear();
+                        LoadTable();
                     }    
                 }
 

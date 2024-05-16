@@ -121,4 +121,35 @@ END
 go
 
 
-UPDATE Bill SET Status=0, DateCheckout='2024-06-05 12:00:00.000' WHERE ID=3
+CREATE TRIGGER UTG_UpdateBillInfo
+ON BillInfo FOR INSERT,UPDATE
+AS
+BEGIN
+	DECLARE @BillID INT
+
+	SELECT @BillID=BillID FROM inserted 
+
+	Declare @TableID INT
+
+	SELECT @TableID = TableID FROM dbo.Bill WHERE ID=@BillID AND Status = 0 
+
+	UPDATE dbo.TableList SET Status=N'Có người' WHERE ID=@TableID
+
+END
+ALTER TRIGGER UTG_UpdateBill
+ON Bill FOR UPDATE
+AS
+BEGIN
+	DECLARE @BillID INT
+	SELECT @BillID = ID FROM inserted
+
+	Declare @TableID INT
+	SELECT @TableID = TableID FROM dbo.Bill WHERE ID=@BillID
+
+	DECLARE @count int =0;
+	SELECT @count= COUNT(*) FROM dbo.Bill WHERE TableID=@TableID AND Status=0
+
+	IF (@count=0)
+	UPDATE dbo.TableList SET Status=N'Trống' WHERE ID=@TableID
+END
+GO

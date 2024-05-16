@@ -38,9 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbxTableSwap = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnSwap = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.cbxCateSelect = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,7 +52,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudFoodCount)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -88,16 +84,16 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtDiscount);
-            this.panel2.Location = new System.Drawing.Point(824, 704);
+            this.panel2.Location = new System.Drawing.Point(560, 704);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(560, 171);
+            this.panel2.Size = new System.Drawing.Size(824, 171);
             this.panel2.TabIndex = 28;
             // 
             // lblSum
             // 
             this.lblSum.AutoSize = true;
             this.lblSum.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSum.Location = new System.Drawing.Point(113, 101);
+            this.lblSum.Location = new System.Drawing.Point(159, 101);
             this.lblSum.Name = "lblSum";
             this.lblSum.Size = new System.Drawing.Size(35, 37);
             this.lblSum.TabIndex = 40;
@@ -115,7 +111,7 @@
             this.btnPrint.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.Color.White;
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(323, 91);
+            this.btnPrint.Location = new System.Drawing.Point(587, 101);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(214, 63);
             this.btnPrint.TabIndex = 39;
@@ -133,7 +129,7 @@
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
             this.btnPay.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnPay.Location = new System.Drawing.Point(323, 10);
+            this.btnPay.Location = new System.Drawing.Point(587, 20);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(214, 63);
             this.btnPay.TabIndex = 38;
@@ -144,7 +140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Location = new System.Drawing.Point(33, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 29);
             this.label2.TabIndex = 32;
@@ -154,7 +150,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 101);
+            this.label1.Location = new System.Drawing.Point(33, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 29);
             this.label1.TabIndex = 31;
@@ -173,7 +169,7 @@
             this.txtDiscount.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold);
             this.txtDiscount.ForeColor = System.Drawing.Color.Black;
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiscount.Location = new System.Drawing.Point(120, 20);
+            this.txtDiscount.Location = new System.Drawing.Point(166, 20);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
@@ -182,59 +178,7 @@
             this.txtDiscount.Size = new System.Drawing.Size(177, 53);
             this.txtDiscount.TabIndex = 30;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
-            // 
-            // cbxTableSwap
-            // 
-            this.cbxTableSwap.BackColor = System.Drawing.Color.Transparent;
-            this.cbxTableSwap.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTableSwap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTableSwap.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTableSwap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTableSwap.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.cbxTableSwap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbxTableSwap.ItemHeight = 30;
-            this.cbxTableSwap.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "2",
-            "1",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2",
-            "2"});
-            this.cbxTableSwap.Location = new System.Drawing.Point(15, 20);
-            this.cbxTableSwap.Name = "cbxTableSwap";
-            this.cbxTableSwap.Size = new System.Drawing.Size(180, 36);
-            this.cbxTableSwap.TabIndex = 41;
-            // 
-            // btnSwap
-            // 
-            this.btnSwap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSwap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSwap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSwap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSwap.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnSwap.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSwap.ForeColor = System.Drawing.Color.White;
-            this.btnSwap.Image = ((System.Drawing.Image)(resources.GetObject("btnSwap.Image")));
-            this.btnSwap.Location = new System.Drawing.Point(15, 80);
-            this.btnSwap.Name = "btnSwap";
-            this.btnSwap.Size = new System.Drawing.Size(180, 63);
-            this.btnSwap.TabIndex = 42;
-            this.btnSwap.Text = "ĐỔI BÀN";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.cbxTableSwap);
-            this.panel3.Controls.Add(this.btnSwap);
-            this.panel3.Location = new System.Drawing.Point(583, 704);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(207, 171);
-            this.panel3.TabIndex = 44;
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // cbxCateSelect
             // 
@@ -286,7 +230,6 @@
             this.cbxFoodSelect.Name = "cbxFoodSelect";
             this.cbxFoodSelect.Size = new System.Drawing.Size(376, 36);
             this.cbxFoodSelect.TabIndex = 36;
-            this.cbxFoodSelect.SelectedIndexChanged += new System.EventHandler(this.cbxFoodSelect_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -394,7 +337,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1405, 887);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flpTableList);
@@ -406,10 +348,8 @@
             this.Name = "frmOrder";
             this.Text = "frmBill";
             this.Load += new System.EventHandler(this.frmOrder_Load);
-            this.Leave += new System.EventHandler(this.frmOrder_Leave);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudFoodCount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -428,10 +368,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private Guna.UI2.WinForms.Guna2Button btnPrint;
-        private Guna.UI2.WinForms.Guna2ComboBox cbxTableSwap;
-        private Guna.UI2.WinForms.Guna2Button btnSwap;
         private System.Windows.Forms.Label lblSum;
-        private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2ComboBox cbxCateSelect;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

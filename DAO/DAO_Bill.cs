@@ -13,14 +13,37 @@ namespace DAO
     public class DAO_Bill:DBConnect
     {
        public DAO_Bill() { }
-       public bool CheckoutBill(int billID, DateTime checkOutDate)
+       public DataTable GetRevueneByCategory()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "EXEC CalculateCategoryRevenue"; // gọi đến store procedure trong sql
+               
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
+
+                DataTable dt_Account = new DataTable();
+                sqlDataAdapter.Fill(dt_Account);
+                return dt_Account;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+       public bool CheckoutBill(int billID, decimal sumBill, decimal discount)
         {
             try
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
 
                 // Query string với tham số hóa
-                string SQL = "UPDATE Bill SET Status=1, DateCheckout=@Date WHERE ID=@BillID";
+                string SQL = "UPDATE Bill SET Status=1, DateCheckout=@Date, Discount=@Discount,TotalPrice=@TotalPrice WHERE ID=@BillID";
 
                 // Tạo đối tượng SqlCommand với câu lệnh SQL và kết nối
                 using (SqlCommand command = new SqlCommand(SQL, conn))
@@ -28,7 +51,10 @@ namespace DAO
 
                     
                     command.Parameters.AddWithValue("@BillID", billID);
-                    command.Parameters.AddWithValue("@Date", checkOutDate);
+                    command.Parameters.AddWithValue("@Discount", discount);
+                    command.Parameters.AddWithValue("@TotalPrice", sumBill);
+                    command.Parameters.AddWithValue("@Date", DateTime.Now);
+
 
                     return (int)command.ExecuteNonQuery()>0;
                     
