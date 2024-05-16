@@ -19,5 +19,6 @@ namespace AppQuanLyQuanCafe
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain("Admin",34));
         }
+
     }
 }

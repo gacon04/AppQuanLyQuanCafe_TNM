@@ -18,7 +18,7 @@ namespace DAO
 
                 if (conn.State == ConnectionState.Closed) conn.Open();
                 
-                string query = "SELECT ID,Name as 'Tên',Description as 'Miêu tả',CreatedDate as 'Ngày tạo' FROM Category";
+                string query = "SELECT ID,Name as 'Tên',Description as 'Miêu tả',CreatedDate as 'Ngày tạo' FROM Category WHERE ID<>10";
                
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
 
@@ -71,15 +71,15 @@ namespace DAO
             try
             {
                 if (conn.State == ConnectionState.Closed) conn.Open();
+                string SQL2 = string.Format("UPDATE Food SET CategoryID=10, Status=N'Đã hết' WHERE CategoryID ={0}", categoryID);
                 string SQL1 = string.Format("DELETE FROM Category WHERE ID ={0}", categoryID);
-                string SQL2 = string.Format("DELETE FROM Food WHERE CategoryID ={0}", categoryID);
-                SqlCommand cmd = new SqlCommand(SQL1, conn);
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    cmd.CommandText = SQL2;
-                    cmd.ExecuteNonQuery();
-                    return true;
-                }
+               
+                SqlCommand cmd = new SqlCommand(SQL2, conn);
+                cmd.ExecuteNonQuery();
+                    cmd.CommandText = SQL1;
+                   return (int)cmd.ExecuteNonQuery()>0;
+                   
+                
 
             }
             catch (Exception ex)

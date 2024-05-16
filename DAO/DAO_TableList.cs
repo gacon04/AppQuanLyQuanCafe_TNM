@@ -22,15 +22,15 @@ namespace DAO
                 string query = "";
                 if (status == "Tất cả")
                 {
-                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList";
+                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Name NOT LIKE '%Đã xoá%'";
                 }
                 else if (status == "Trống")
                 {
-                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Trống'";
+                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Trống' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 else if (status == "Có người")
                 {
-                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Có người'";
+                    query = "SELECT ID as N'ID bàn' ,Name as N'Tên bàn',Status as N'Trạng thái' FROM TableList WHERE Status= N'Có người' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
 
@@ -87,7 +87,7 @@ namespace DAO
                 if (conn.State == ConnectionState.Closed) conn.Open();
               
                
-                    string SQL = string.Format("DELETE FROM TableList WHERE ID ={0}", table_id);
+                    string SQL = string.Format("UPDATE TableList SET Name=Name+' - Đã xoá' WHERE ID ={0}", table_id);
                     SqlCommand cmd = new SqlCommand(SQL, conn);
                      return cmd.ExecuteNonQuery() > 0;
 

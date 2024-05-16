@@ -34,7 +34,6 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnRevenue = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblHi = new System.Windows.Forms.Label();
@@ -61,7 +60,7 @@
             this.btnTableList.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTableList.Image = ((System.Drawing.Image)(resources.GetObject("btnTableList.Image")));
             this.btnTableList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTableList.Location = new System.Drawing.Point(4, 393);
+            this.btnTableList.Location = new System.Drawing.Point(4, 438);
             this.btnTableList.Margin = new System.Windows.Forms.Padding(2);
             this.btnTableList.Name = "btnTableList";
             this.btnTableList.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -78,7 +77,7 @@
             this.btnCategory.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategory.Location = new System.Drawing.Point(8, 573);
+            this.btnCategory.Location = new System.Drawing.Point(8, 648);
             this.btnCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -95,7 +94,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(4, 483);
+            this.btnMenu.Location = new System.Drawing.Point(4, 543);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(2);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -112,7 +111,7 @@
             this.btnOrder.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
             this.btnOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrder.Location = new System.Drawing.Point(6, 213);
+            this.btnOrder.Location = new System.Drawing.Point(6, 228);
             this.btnOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -139,23 +138,6 @@
             this.btnHome.Text = "    Tổng quan";
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btnRevenue
-            // 
-            this.btnRevenue.FlatAppearance.BorderSize = 0;
-            this.btnRevenue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRevenue.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRevenue.Image = ((System.Drawing.Image)(resources.GetObject("btnRevenue.Image")));
-            this.btnRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRevenue.Location = new System.Drawing.Point(6, 663);
-            this.btnRevenue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRevenue.Name = "btnRevenue";
-            this.btnRevenue.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnRevenue.Size = new System.Drawing.Size(325, 66);
-            this.btnRevenue.TabIndex = 6;
-            this.btnRevenue.Text = "Thống kê";
-            this.btnRevenue.UseVisualStyleBackColor = true;
-            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
             // btnAccount
             // 
@@ -289,7 +271,6 @@
             this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Controls.Add(this.btnCategory);
             this.panelLeft.Controls.Add(this.btnAccount);
-            this.panelLeft.Controls.Add(this.btnRevenue);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
@@ -303,7 +284,7 @@
             this.btnBill.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBill.Image = ((System.Drawing.Image)(resources.GetObject("btnBill.Image")));
             this.btnBill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBill.Location = new System.Drawing.Point(4, 303);
+            this.btnBill.Location = new System.Drawing.Point(4, 333);
             this.btnBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnBill.Name = "btnBill";
             this.btnBill.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -390,7 +371,6 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Panel panelBody;
-        public System.Windows.Forms.Button btnRevenue;
         private System.Windows.Forms.Button btnBill;
     }
 }

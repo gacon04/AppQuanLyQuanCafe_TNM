@@ -11,6 +11,5 @@ namespace DAO
     public class DBConnect
     {
         protected SqlConnection conn = new SqlConnection("Data Source=DESKTOP-664DDD6;Initial Catalog=QuanLyQuanCafe;Integrated Security=True");
-   
     }
 }

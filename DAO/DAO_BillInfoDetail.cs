@@ -43,6 +43,36 @@ namespace DAO
                 conn.Close();
             }
         }
+        public DataTable getBillInfoByBillID(int id)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                string proc = "GetBillDetailsByBillID";
+                using (SqlCommand command = new SqlCommand(proc, conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@BillID", id);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    sqlDataAdapter.Fill(dt);
+
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         public List<DTO_BillInfoDetail> GetListMenuByTableID(int id)
         {
             try

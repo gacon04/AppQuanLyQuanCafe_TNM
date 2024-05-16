@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,10 @@ namespace BUS
         public bool addBillInfo(DTO_BillInfo dto)
         {
             return dao_menu.AddBillInfo(dto);
+        }
+        public DataTable GetBillInfoByBillID(int id)
+        {
+            return dao_menu.getBillInfoByBillID(id);
         }
     }
 }

@@ -33,7 +33,6 @@
             this.flpTableList = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblSum = new System.Windows.Forms.Label();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -79,14 +78,13 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.lblSum);
-            this.panel2.Controls.Add(this.btnPrint);
             this.panel2.Controls.Add(this.btnPay);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtDiscount);
             this.panel2.Location = new System.Drawing.Point(560, 704);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(824, 171);
+            this.panel2.Size = new System.Drawing.Size(824, 138);
             this.panel2.TabIndex = 28;
             // 
             // lblSum
@@ -101,23 +99,6 @@
             this.lblSum.TextChanged += new System.EventHandler(this.lblSum_TextChanged);
             this.lblSum.Click += new System.EventHandler(this.lblSum_Click);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrint.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnPrint.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.Location = new System.Drawing.Point(587, 101);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(214, 63);
-            this.btnPrint.TabIndex = 39;
-            this.btnPrint.Text = "XUẤT HOÁ ĐƠN ";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // btnPay
             // 
             this.btnPay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -129,7 +110,7 @@
             this.btnPay.ForeColor = System.Drawing.Color.White;
             this.btnPay.Image = ((System.Drawing.Image)(resources.GetObject("btnPay.Image")));
             this.btnPay.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnPay.Location = new System.Drawing.Point(587, 20);
+            this.btnPay.Location = new System.Drawing.Point(587, 46);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(214, 63);
             this.btnPay.TabIndex = 38;
@@ -367,7 +348,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private Guna.UI2.WinForms.Guna2Button btnPay;
-        private Guna.UI2.WinForms.Guna2Button btnPrint;
         private System.Windows.Forms.Label lblSum;
         private Guna.UI2.WinForms.Guna2ComboBox cbxCateSelect;
         private System.Windows.Forms.Label label4;

@@ -21,12 +21,8 @@ namespace AppQuanLyQuanCafe
         //  private frmMain formMainInstance;
         BUS_Home bus_Home = new BUS_Home();
         Func<ChartPoint, string> labelPoint = chartpoint => string.Format("{0} {1:P}", chartpoint.Y, chartpoint.Participation);
-
-        public frmHome()
+        public void xuLyBieuDo()
         {
-            InitializeComponent();
-            //      formMainInstance = new frmMain();
-            dgvRevueneHome.DataSource = bUS_Bill.GetRevueneByCategory();
             SeriesCollection series = new SeriesCollection();
             foreach (DataRow row in ((DataTable)dgvRevueneHome.DataSource).Rows)
             {
@@ -34,6 +30,21 @@ namespace AppQuanLyQuanCafe
             }
             pieChart1.Series = series;
             pieChart1.LegendLocation = LegendLocation.Bottom;
+        }
+        public void xuLyThongKe()
+        {
+            lblCBillInMonth.Text = bUS_Bill.CountBillsInCurrentMonth().ToString() + " đơn";
+            lblCAllBills.Text = "Tổng: "+bUS_Bill.CountAllBill().ToString();
+            lblRevueneInMonth.Text = bUS_Bill.SumBillCurrentMonth();
+            lblTotalRevuene.Text = "Tổng: "+ bUS_Bill.SumAllBills();
+        }
+        public frmHome()
+        {
+            InitializeComponent();
+            //      formMainInstance = new frmMain();
+            dgvRevueneHome.DataSource = bUS_Bill.GetRevueneByCategory();
+            xuLyBieuDo();
+            xuLyThongKe();
         }
         
         private void frmHome_Load(object sender, EventArgs e)

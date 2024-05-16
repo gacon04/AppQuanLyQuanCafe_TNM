@@ -87,8 +87,9 @@ CREATE TABLE BillInfo (
     FOREIGN KEY (FoodID) REFERENCES Food(ID)
 );
 go
-CREATE PROC SP_GetTableList
+ALTER PROC SP_GetTableList
 AS SELECT * FROM dbo.TableList
+WHERE Name NOT LIKE '%Đã xoá%'
 
 ALTER PROC USP_InsertBillInfo
 @BillID INT , @FoodID INT, @Quantity INT
@@ -153,3 +154,92 @@ BEGIN
 	UPDATE dbo.TableList SET Status=N'Trống' WHERE ID=@TableID
 END
 GO
+
+ALTER PROCEDURE CalculateCategoryRevenue
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @StartDate DATETIME;
+    DECLARE @EndDate DATETIME;
+
+    -- Lấy ngày đầu tiên của tháng hiện tại
+    SET @StartDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()), 0);
+    
+    -- Lấy ngày cuối cùng của tháng hiện tại
+    SET @EndDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()) + 1, 0);
+
+    SELECT c.Name AS 'Danh mục', SUM(bi.Quantity * f.Price) AS 'Doanh thu'
+    FROM BillInfo bi
+    INNER JOIN Food f ON bi.FoodID = f.ID
+    INNER JOIN Category c ON f.CategoryID = c.ID
+    INNER JOIN Bill b ON bi.BillID = b.ID
+    WHERE b.Status = 1 -- Để chỉ tính các bill đã thanh toán (đã checkout)
+    AND b.DateCheckin >= @StartDate AND b.DateCheckin < @EndDate
+    GROUP BY c.Name;
+END;
+
+CREATE PROCEDURE CountBillsInCurrentMonth
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    DECLARE @StartDate DATETIME;
+    DECLARE @EndDate DATETIME;
+    SET @StartDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()), 0);
+
+    SET @EndDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()) + 1, 0);
+
+    SELECT COUNT(*) AS TotalBills
+    FROM Bill
+    WHERE DateCheckin >= @StartDate AND DateCheckin < @EndDate;
+END;
+
+CREATE PROCEDURE CalculateTotalBillAmountInCurrentMonth
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @StartDate DATETIME;
+    DECLARE @EndDate DATETIME;
+
+    -- Lấy ngày đầu tiên của tháng hiện tại
+    SET @StartDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()), 0);
+    
+    -- Lấy ngày cuối cùng của tháng hiện tại
+    SET @EndDate = DATEADD(month, DATEDIFF(month, 0, GETDATE()) + 1, 0);
+
+    SELECT SUM(TotalPrice)
+    FROM Bill
+    WHERE DateCheckin >= @StartDate AND DateCheckin < @EndDate;
+END;
+
+
+EXEC GetBillsByDateRange '2024-01-01', '2024-12-31' 
+
+ALTER PROCEDURE GetBillsByDateRange
+    @FromDate DATETIME,
+    @ToDate DATETIME
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        B.ID AS 'ID',
+        TL.Name AS 'Tên bàn',
+        B.TotalPrice AS 'Tổng tiền',
+        B.Discount AS 'Giảm giá',
+        B.DateCheckin AS 'T',
+        B.DateCheckout AS 'Giờ ra',
+        A.Name AS 'Thực hiện'
+    FROM
+        Bill B
+    INNER JOIN
+        TableList TL ON B.TableID = TL.ID
+    INNER JOIN
+        Account A ON B.AccountID = A.ID
+    WHERE
+		b.Status = 1 AND
+        B.DateCheckin >= @FromDate
+        AND B.DateCheckin <= @ToDate;
+END;

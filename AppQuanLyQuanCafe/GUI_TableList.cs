@@ -104,7 +104,7 @@ namespace AppQuanLyQuanCafe
                 }
                 else
                 {
-                    MessageBox.Show("Xóa bàn không thành công");
+                    MessageBox.Show("Xóa bàn không thành công, trong hoá đơn đang có bàn này");
                 }
             }
             else

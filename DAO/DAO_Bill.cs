@@ -13,7 +13,164 @@ namespace DAO
     public class DAO_Bill:DBConnect
     {
        public DAO_Bill() { }
-       public DataTable GetRevueneByCategory()
+        public DataTable getBillByDate(DateTime timeStart,DateTime timeEnd)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+
+                string proc = "GetBillsByDateRange";
+                using (SqlCommand command = new SqlCommand(proc, conn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@FromDate", timeStart);
+                    command.Parameters.AddWithValue("@ToDate", timeEnd);
+
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                    DataTable dt_Bill = new DataTable();
+                    sqlDataAdapter.Fill(dt_Bill);
+
+                    return dt_Bill;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public int CountBillCurrentMonth()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "EXEC CountBillsInCurrentMonth";
+
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return (int)result;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public decimal SumBillCurrentMonth()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "EXEC CalculateTotalBillAmountInCurrentMonth"; // gọi đến store procedure trong sql
+
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return (decimal)result;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public int CountAllBill()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "SELECT COUNT(*) FROM Bill;";
+
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return (int)result;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public decimal SummAllBills()
+        {
+            try
+            {
+
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "SELECT SUM(TotalPrice) FROM Bill"; // gọi đến store procedure trong sql
+
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return (decimal)result;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+     
+        public DataTable GetRevueneByCategory()
         {
             try
             {

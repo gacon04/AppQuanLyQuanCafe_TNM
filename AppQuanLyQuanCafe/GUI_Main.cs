@@ -25,8 +25,7 @@ namespace AppQuanLyQuanCafe
             thisRole = role;
             if (role == "Member")
             {
-                btnAccount.Visible = false;
-                btnRevenue.Visible = false; 
+                btnAccount.Visible = false; 
             }
             timer = new Timer();
             timer.Interval = 100;
@@ -113,8 +112,7 @@ namespace AppQuanLyQuanCafe
 
         private void btnRevenue_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new frmRevuene());
-            lblTenmuc.Text = "THỐNG KÊ";
+         
 
         }
 

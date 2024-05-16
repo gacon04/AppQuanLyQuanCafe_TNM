@@ -206,6 +206,10 @@ namespace AppQuanLyQuanCafe
                 clearAllFoodInfo();
                 
             }
+            else
+            {
+                MessageBox.Show("Xoá món không thành công");
+            }
         }
     }
 }
