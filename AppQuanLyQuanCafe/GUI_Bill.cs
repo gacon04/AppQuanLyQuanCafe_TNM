@@ -71,16 +71,21 @@ namespace AppQuanLyQuanCafe
         {
             if (dgvBill.SelectedRows.Count > 0)
             {
-                if (!bus_Bill.deleteBill((int)dgvBill.CurrentRow.Cells[0].Value))
-                        {
-                    MessageBox.Show("Xoá hoá đơn không thành công");
-                }
-                else
+                DialogResult dlg = MessageBox.Show("Bạn có chắc chắn xoá hoá đơn này?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dlg == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xoá thành công");
-                }
-                dgvBill.DataSource = bus_Bill.getBill(dtpStart.Value,dtpEnd.Value);
-                dgvBill.ClearSelection();
+                    if (!bus_Bill.deleteBill((int)dgvBill.CurrentRow.Cells[0].Value))
+                    {
+                        MessageBox.Show("Xoá hoá đơn không thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xoá thành công");
+                    }
+                    dgvBill.DataSource = bus_Bill.getBill(dtpStart.Value, dtpEnd.Value);
+                    dgvBill.ClearSelection();
+                }    
+                
             }
             else
             {
@@ -92,8 +97,18 @@ namespace AppQuanLyQuanCafe
         {
             if (dgvBill.SelectedRows.Count > 0)
             {
+                string[] s = new string[7];
+                s[0] = ((int)dgvBill.CurrentRow.Cells[0].Value).ToString();
+                s[1]= dgvBill.CurrentRow.Cells[1].Value.ToString();
                 
-                Form1 form1 = new Form1((int)dgvBill.CurrentRow.Cells[0].Value);
+                s[2] = dgvBill.CurrentRow.Cells[4].Value.ToString();
+                s[3]= dgvBill.CurrentRow.Cells[5].Value.ToString();
+
+                s[4] = dgvBill.CurrentRow.Cells[6].Value.ToString();
+                s[5]= ((decimal)dgvBill.CurrentRow.Cells[3].Value).ToString();
+                s[6]= ((decimal)dgvBill.CurrentRow.Cells[2].Value).ToString();
+                
+                Form1 form1 = new Form1((int)dgvBill.CurrentRow.Cells[0].Value, s);
                 form1.ShowDialog();
             }
             else

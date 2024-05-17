@@ -21,15 +21,15 @@ namespace DAO
                 string query="";
                 if (status == "Full")
                 {
-                    query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Name NOT LIKE '%Đã xoá%' ";
+                    query = "SELECT ID,Account as 'Tài khoản',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Name NOT LIKE '%Đã xoá%' ";
                 } 
                 else if (status=="Active")
                 {
-                     query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as'Trạng thái' FROM Account WHERE Status = N'Hoạt động' AND Name NOT LIKE '%Đã xoá%'";
+                     query = "SELECT ID,Account as 'Tài khoản',Role as 'Vai trò',Status as'Trạng thái' FROM Account WHERE Status = N'Hoạt động' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 else if (status == "Off")
                 {
-                    query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Status = N'Nghỉ' AND Name NOT LIKE '%Đã xoá%'";
+                    query = "SELECT ID,Account as 'Tài khoản',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Status = N'Nghỉ' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
                

@@ -109,6 +109,7 @@ namespace AppQuanLyQuanCafe
         private void frmAccount_Click(object sender, EventArgs e)
         {
             dgvAccount.ClearSelection();
+            txtPassword.ReadOnly = false;
         }
 
         private void dgvAccount_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -153,6 +154,7 @@ namespace AppQuanLyQuanCafe
         {
             if (dgvAccount.SelectedRows.Count > 0)
             {
+                txtPassword.ReadOnly=true;
                 btnAdd.Enabled = false;
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
