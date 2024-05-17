@@ -16,6 +16,10 @@ namespace BUS
         {
             return DAO_Bill.getBillByDate(time1,time2);
         }
+        public bool deleteBill(int id)
+        {
+            return DAO_Bill.deleteBill(id); 
+        }
         public bool AddBill(DTO_Bill dto)
         {
             return DAO_Bill.AddBill(dto);

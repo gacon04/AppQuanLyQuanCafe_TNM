@@ -21,15 +21,15 @@ namespace DAO
                 string query="";
                 if (status == "Full")
                 {
-                    query =   "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account";
+                    query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Name NOT LIKE '%Đã xoá%' ";
                 } 
                 else if (status=="Active")
                 {
-                     query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as'Trạng thái' FROM Account WHERE Status = N'Hoạt động'";
+                     query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as'Trạng thái' FROM Account WHERE Status = N'Hoạt động' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 else if (status == "Off")
                 {
-                    query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Status = N'Nghỉ'";
+                    query = "SELECT ID,Account as 'Tài khoản',Password as 'Mật khẩu',Role as 'Vai trò',Status as 'Trạng thái' FROM Account WHERE Status = N'Nghỉ' AND Name NOT LIKE '%Đã xoá%'";
                 }
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, conn);
                
@@ -97,7 +97,7 @@ namespace DAO
 
                 // Nếu xoá member thì ko care, nếu là admin thì phải >=2 tài khoản admin trong hệ thống
                 if ((countAdminAccount >=2 && role=="Admin") || (role=="Member")  ) {
-                    string SQL = string.Format("DELETE FROM Account WHERE ID ={0}", account_ID);
+                    string SQL = string.Format("UPDATE Account SET Name=Name+' - Đã xoá', Status=N'Nghỉ' WHERE ID ={0}", account_ID);
                     SqlCommand cmd = new SqlCommand(SQL, conn);
                     if (cmd.ExecuteNonQuery() > 0)
                     {

@@ -191,7 +191,7 @@ namespace AppQuanLyQuanCafe
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new frmBill());
+            OpenChildForm(new frmBill(thisRole));
             lblTenmuc.Text = "HOÁ ĐƠN";
         }
     }

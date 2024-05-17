@@ -30,7 +30,7 @@ namespace AppQuanLyQuanCafe
                 txtPrice.ReadOnly = true;
                 txtDescription.ReadOnly = true;
                 cbxCateName.Enabled = false;
-                cbxStatus.Enabled = false;
+                
             }
         }
         public void clearAllFoodInfo()

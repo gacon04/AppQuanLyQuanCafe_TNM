@@ -10,9 +10,35 @@ using System.Collections;
 using DTO;
 namespace DAO
 {
+    
     public class DAO_Bill:DBConnect
     {
        public DAO_Bill() { }
+        public bool deleteBill(int id)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                string query = "DELETE FROM BillInfo WHERE BillID = "+id;
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "DELETE FROM Bill WHERE ID ="+id;
+                return (int)cmd.ExecuteNonQuery() > 0;
+
+
+
+            }
+            catch (Exception ex)
+            {
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return false;
+        }
         public DataTable getBillByDate(DateTime timeStart,DateTime timeEnd)
         {
             try

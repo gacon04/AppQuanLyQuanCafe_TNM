@@ -8,10 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using DAO;
 using DTO;
+using System.Security.Cryptography;
 namespace BUS
 {
     public class BUS_Account
     {
+        public string HashPassword(string password)
+        {
+            using (SHA1Managed sha1 = new SHA1Managed())
+            {
+                var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var sb = new StringBuilder(hash.Length * 2);
+
+                foreach (byte b in hash)
+                {
+                    sb.Append(b.ToString("X2"));
+                }
+
+                return sb.ToString();
+            }
+        }
         DAO_Account DAOAccount = new DAO_Account();
         public DataTable getAccountTable(string status)
         {
@@ -23,7 +39,9 @@ namespace BUS
         }
         public bool addAccount(DTO_Account account)
         {
-            return DAOAccount.addAccount(account);
+            DTO_Account ano = account;
+            ano.Password = HashPassword(ano.Password);
+            return DAOAccount.addAccount(ano);
         }
         public bool deleteAccount(int account_ID,string role)
         {
@@ -39,19 +57,24 @@ namespace BUS
         }
         public bool updateAccount(DTO_Account account)
         {
-            return DAOAccount.updateAccount(account);
+            DTO_Account ano = account;
+            ano.Password= HashPassword(ano.Password);
+            return DAOAccount.updateAccount(ano);
         }
         public bool isAdmin(string account, string password)
         {
-            return DAOAccount.roleOfInput(account, password) == "Admin";
+            string hashPass = HashPassword(password);
+            return DAOAccount.roleOfInput(account, hashPass) == "Admin";
         }
         public bool isMember(string account, string password)
         {
-            return DAOAccount.roleOfInput(account, password) == "Member";
+            string hashPass = HashPassword(password);
+            return DAOAccount.roleOfInput(account,hashPass ) == "Member";
         }
         public bool haveRole(string account, string password)
         {
-            return DAOAccount.roleOfInput(account, password) != "";
+            string hashPass = HashPassword(password);
+            return DAOAccount.roleOfInput(account, hashPass) != "";
         }
         public int getAccountIDByUserName(string userName)
         {
