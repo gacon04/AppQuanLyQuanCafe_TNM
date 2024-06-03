@@ -2,7 +2,7 @@
 
 ## Giới thiệu
 
-Đây là tiểu luận môn lập trình trên Windows, được thực hiện bởi **Trần Ngọc Minh**. Ứng dụng này là một hệ thống đơn giản nhằm quản lý cho quán cà phê, được tham khảo từ nhiều nguồn.
+Đây là tiểu luận môn lập trình trên Windows, được thực hiện bởi **Trần Ngọc Minh**. Ứng dụng này là một hệ thống đơn giản nhằm quản lý cho quán cà phê, được tham khảo từ nhiều nguồn. Được thực hiện bởi sinh viên năm 2 nên còn nhiều nghiệp dư, đầy sơ sài và sai sót.
 
 ## Tính năng
 
