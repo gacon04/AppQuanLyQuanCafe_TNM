@@ -17,10 +17,16 @@
 
 - Thiết kế theo mô hình 3 lớp.
 
+## Công nghệ
+
+- **Guna UI Extension**: Sử dụng để tạo giao diện người dùng trực quan và hiện đại.
+- **LiveChart Extension**: Sử dụng để hiển thị biểu đồ và đồ thị trực quan.
+- **RDLC Designer**: Sử dụng để tạo và thiết kế báo cáo (ứng dụng cho việc tạo hoá đơn bán hàng).
+- **ADO.NET**: Sử dụng để làm việc với cơ sở dữ liệu và xử lý dữ liệu.
+
 ## Yêu Cầu Hệ Thống
 
 - Hệ điều hành: Windows.
-
 - Hiển thị tốt nhất ở scale 100% của Windows.
 
 ## Cài Đặt
@@ -32,7 +38,7 @@
 
 ## Hỗ Trợ
 
-Liên hệ Trần Ngọc Minh qua email: tnminhgl.contact@gmail.com để nhận hỗ trợ thêm.
+Liên hệ Trần Ngọc Minh qua email: tnminhgl.contact@gmail.com để nếu có bất cứ thắc mắc nào.
 
 ## Bản Quyền
 
@@ -40,4 +46,4 @@ Liên hệ Trần Ngọc Minh qua email: tnminhgl.contact@gmail.com để nhận
 
 ## Đóng Góp
 
-Mọi đóng góp vào dự án đều được hoan nghênh. Hãy tạo pull request để đóng góp ý kiến hoặc báo cáo lỗi.
+Mọi đóng góp vào dự án đều được hoan nghênh. 
